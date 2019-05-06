@@ -1,0 +1,15 @@
+<configuration>
+  <interfaces>
+    <interface>
+      <name>xe-0/0/0</name>
+      <unit>
+        <name>1</name>
+        <description>This is unit1</description>
+      </unit>
+      <unit>
+        <name>2</name>
+        <description>This is unit2</description>
+      </unit>
+    </interface>
+  </interfaces>
+</configuration>

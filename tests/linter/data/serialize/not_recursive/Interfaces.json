@@ -1,0 +1,14 @@
+{
+    "name": "openconfig-interfaces:interfaces",
+    "path": "openconfig-interfaces:interfaces",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 94,
+    "messages": [],
+    "children": {},
+    "type": "container",
+    "class_name": "Interfaces",
+    "implements": [
+        "interface"
+    ],
+    "metadata": {}
+}

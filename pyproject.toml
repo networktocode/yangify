@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "yangify"
+version = "0.1.0"
+description = "Library to help parsing/translating YANG models from/to native text/structures"
+authors = ["David Barroso <dbarrosop@dravetech.com>"]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+yangson = "^1.3"
+dataclasses = { version = "^0.6.0", python = "~3.6" }
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+black = { version = "19.3b0", allows-prereleases = true }
+pylama = "^7.6"
+flake8-import-order = "^0.18.0"
+mypy = "^0.701.0"
+pytest-pythonpath = "^0.7.3"
+pytest-cov = "^2.6"
+jmespath = "^0.9.3"
+lxml = "^4.3"
+xmltodict = "^0.11.0"
+jupyter = "^1.0"
+nbval = "^0.9.1"
+textfsm = { git = "https://github.com/google/textfsm" }
+
+
+[build-system]
+requires = ["poetry>=0.12.4"]
+build-backend = "poetry.masonry.api"

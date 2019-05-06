@@ -1,0 +1,107 @@
+{
+  "openconfig-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "ge-0/0/0",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "ge-0/0/0",
+          "enabled": false
+        },
+        "subinterfaces": {
+          "subinterface": [
+            {
+              "index": 0,
+              "config": {
+                "index": 0,
+                "description": "this is interface ge-0/0/0"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "ge-0/0/1",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "ge-0/0/1",
+          "enabled": true
+        },
+        "subinterfaces": {
+          "subinterface": [
+            {
+              "index": 0,
+              "config": {
+                "index": 0,
+                "description": "this is interface ge-0/0/1"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "ge-0/0/2",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "ge-0/0/2",
+          "enabled": true
+        },
+        "subinterfaces": {
+          "subinterface": [
+            {
+              "index": 0,
+              "config": {
+                "index": 0,
+                "description": "this is interface ge-0/0/2"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "ge-0/0/3",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "ge-0/0/3",
+          "enabled": true
+        },
+        "subinterfaces": {
+          "subinterface": [
+            {
+              "index": 0,
+              "config": {
+                "index": 0,
+                "description": "this is interface ge-0/0/3"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "lo0",
+        "config": {
+          "type": "iana-if-type:softwareLoopback",
+          "name": "lo0",
+          "enabled": true
+        },
+        "subinterfaces": {
+          "subinterface": [
+            {
+              "index": 0,
+              "config": {
+                "index": 0
+              }
+            },
+            {
+              "index": 3,
+              "config": {
+                "index": 3,
+                "description": "this is interface lo0.3"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

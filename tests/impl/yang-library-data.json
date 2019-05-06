@@ -1,0 +1,104 @@
+{
+  "ietf-yang-library:modules-state": {
+    "module-set-id": "e595da11ace92c0d881995fa7e56bbe86f1f48e9",
+    "module": [
+      {
+        "name": "ietf-inet-types",
+        "revision": "2013-07-15",
+        "namespace": "urn:ietf:params:xml:ns:yang:ietf-inet-types",
+        "conformance-type": "import",
+        "schema": "https://raw.githubusercontent.com/YangModels/yang/master/standard/ietf/RFC/ietf-inet-types.yang"
+      },
+      {
+        "name": "ietf-yang-library",
+        "revision": "2016-06-21",
+        "namespace": "urn:ietf:params:xml:ns:yang:ietf-yang-library",
+        "conformance-type": "implement"
+      },
+      {
+        "name": "ietf-yang-types",
+        "revision": "2013-07-15",
+        "namespace": "urn:ietf:params:xml:ns:yang:ietf-yang-types",
+        "conformance-type": "import",
+        "schema": "https://github.com/YangModels/yang/blob/master/standard/ietf/RFC/ietf-yang-types.yang"
+      },
+      {
+        "name": "iana-if-type",
+        "revision": "2017-01-19",
+        "namespace": "urn:ietf:params:xml:ns:yang:iana-if-type",
+        "conformance-type": "implement",
+        "schema": "https://github.com/YangModels/yang/blob/master/experimental/odp/iana-if-type.yang"
+      },
+      {
+        "name": "openconfig-interfaces",
+        "revision": "2016-12-22",
+        "namespace": "urn:ietf:params:xml:ns:yang:openconfig-interfaces",
+        "conformance-type": "implement",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/interfaces/openconfig-interfaces.yang"
+      },
+      {
+        "name": "openconfig-extensions",
+        "revision": "2017-01-29",
+        "namespace": "urn:ietf:params:xml:ns:yang:openconfig-extensions",
+        "conformance-type": "import",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/openconfig-extensions.yang"
+      },
+      {
+        "name": "ietf-interfaces",
+        "revision": "2014-05-08",
+        "namespace": "urn:ietf:params:xml:ns:yang:ietf-interfaces",
+        "conformance-type": "import",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/interfaces/openconfig-interfaces.yang"
+      },
+      {
+        "name": "openconfig-if-aggregate",
+        "revision": "2016-12-22",
+        "namespace": "urn:ietf:params:xml:ns:yang:openconfig-if-aggregate",
+        "conformance-type": "implement",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/interfaces/openconfig-if-aggregate.yang"
+      },
+      {
+        "name": "openconfig-if-ethernet",
+        "revision": "2016-12-22",
+        "namespace": "urn:ietf:params:xml:ns:yang:openconfig-if-ethernet",
+        "conformance-type": "implement",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/interfaces/openconfig-if-ethernet.yang"
+      },
+      {
+        "name": "openconfig-vlan",
+        "revision": "2016-05-26",
+        "namespace": "urn:ietf:params:xml:ns:yang:openconfig-vlan",
+        "conformance-type": "implement",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/vlan/openconfig-vlan.yang"
+      },
+      {
+        "name": "openconfig-vlan-types",
+        "revision": "2016-05-26",
+        "namespace": "urn:ietf:params:xml:ns:yang:openconfig-vlan-types",
+        "conformance-type": "implement",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/vlan/openconfig-vlan-types.yang"
+      },
+      {
+        "name": "openconfig-if-ip",
+        "revision": "2016-12-22",
+        "namespace": "urn:ietf:params:xml:ns:yang:openconfig-if-ip",
+        "conformance-type": "implement",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/interfaces/openconfig-if-ip.yang"
+      },
+      {
+        "name": "openconfig-if-ip-ext",
+        "revision": "2016-12-22",
+        "namespace": "urn:ietf:params:xml:ns:yang:openconfig-if-ip-ext",
+        "conformance-type": "import",
+        "schema": "https://github.com/openconfig/public/blob/master/release/models/interfaces/openconfig-if-ip-ext.yang"
+      },
+      {
+        "name": "napalm-if-ip",
+        "revision": "2017-03-17",
+        "namespace": "urn:ietf:params:xml:ns:yang:napalm-if-ip",
+        "conformance-type": "implement",
+        "schema": "https://github.com/napalm-automation/napalm-yang/yang_napalm/interfaces/napalm-if-ip.yang"
+      }
+    ]
+  }
+}

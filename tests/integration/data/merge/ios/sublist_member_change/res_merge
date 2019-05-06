@@ -1,0 +1,4 @@
+interface FastEthernet1.1
+   description This is a new description for Fa1.1
+   exit
+!

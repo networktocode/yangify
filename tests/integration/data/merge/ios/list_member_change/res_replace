@@ -1,0 +1,9 @@
+no vlan 10
+vlan 10
+   exit
+!
+no vlan 20
+vlan 20
+   name prod
+   exit
+!

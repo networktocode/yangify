@@ -1,0 +1,4 @@
+interface FastEthernet1
+   description This is Fa1
+   exit
+!

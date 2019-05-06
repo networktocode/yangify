@@ -1,0 +1,4 @@
+interface FastEthernet1
+   no description
+   exit
+!

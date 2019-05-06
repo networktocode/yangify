@@ -1,0 +1,19 @@
+<configuration>
+  <interfaces replace="replace">
+    <interface>
+      <name>xe-0/0/0</name>
+      <unit>
+        <name>1</name>
+        <description>This is 1</description>
+      </unit>
+      <unit>
+        <name>2</name>
+        <description>This is 2</description>
+      </unit>
+      <unit>
+        <name>3</name>
+        <description>This is 3</description>
+      </unit>
+    </interface>
+  </interfaces>
+</configuration>

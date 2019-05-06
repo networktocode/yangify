@@ -1,0 +1,5 @@
+default interface FastEthernet1
+interface FastEthernet1
+   description This is Fa1
+   exit
+!

@@ -1,0 +1,70 @@
+{
+  "openconfig-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "FastEthernet1",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "FastEthernet1",
+          "description": "This is Fa1",
+          "enabled": false
+        },
+        "subinterfaces": {
+          "subinterface": [
+            {
+              "index": 1,
+              "config": {
+                "index": 1,
+                "description": "This is Fa1.1"
+              }
+            },
+            {
+              "index": 2,
+              "config": {
+                "index": 2,
+                "description": "This is Fa1.2"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "FastEthernet3",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "FastEthernet3",
+          "description": "This is Fa3",
+          "enabled": true
+        }
+      },
+      {
+        "name": "FastEthernet4",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "FastEthernet4",
+          "enabled": false
+        }
+      }
+    ]
+  },
+  "openconfig-vlan:vlans": {
+    "vlan": [
+      {
+        "vlan-id": 10,
+        "config": {
+          "vlan-id": 10,
+          "name": "prod",
+          "status": "ACTIVE"
+        }
+      },
+      {
+        "vlan-id": 20,
+        "config": {
+          "vlan-id": 20,
+          "name": "dev",
+          "status": "SUSPENDED"
+        }
+      }
+    ]
+  }
+}

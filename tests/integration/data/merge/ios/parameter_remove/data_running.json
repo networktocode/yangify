@@ -1,0 +1,14 @@
+{
+  "openconfig-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "FastEthernet1",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "FastEthernet1",
+          "description": "This is Fa1"
+        }
+      }
+    ]
+  }
+}

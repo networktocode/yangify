@@ -1,0 +1,13 @@
+{
+  "openconfig-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "xe-0/0/0",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "xe-0/0/0"
+        }
+      }
+    ]
+  }
+}

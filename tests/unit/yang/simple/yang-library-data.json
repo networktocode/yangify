@@ -1,0 +1,12 @@
+{
+  "ietf-yang-library:modules-state": {
+    "module-set-id": "324234234234",
+    "module": [
+      {
+        "name": "yangify-tests",
+        "revision": "2019-02-22",
+        "conformance-type": "implement"
+      }
+    ]
+  }
+}

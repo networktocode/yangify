@@ -1,0 +1,11 @@
+<configuration>
+  <vlans replace="replace">
+    <vlan>
+      <vlan-id>10</vlan-id>
+    </vlan>
+    <vlan>
+      <vlan-id>20</vlan-id>
+      <name>prod</name>
+    </vlan>
+  </vlans>
+</configuration>

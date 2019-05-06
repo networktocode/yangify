@@ -1,0 +1,60 @@
+<configuration>
+  <interfaces>
+    <interface>
+      <name>xe-0/0/0</name>
+      <disable delete="delete"/>
+      <unit>
+        <name>0</name>
+        <description>this is interface xe-0/0/0</description>
+      </unit>
+    </interface>
+    <interface>
+      <name>xe-0/0/1</name>
+      <disable delete="delete"/>
+      <unit>
+        <name>0</name>
+        <family>
+          <ethernet-switching>
+            <interface-mode>access</interface-mode>
+            <vlan>
+              <members>10</members>
+            </vlan>
+          </ethernet-switching>
+        </family>
+      </unit>
+    </interface>
+    <interface>
+      <name>xe-0/0/3</name>
+      <disable delete="delete"/>
+      <unit>
+        <name>0</name>
+        <family>
+          <ethernet-switching>
+            <interface-mode>trunk</interface-mode>
+            <vlan>
+              <members>10</members>
+              <members>20</members>
+              <members>100</members>
+            </vlan>
+          </ethernet-switching>
+        </family>
+      </unit>
+    </interface>
+  </interfaces>
+  <vlans>
+    <vlan>
+      <vlan-id>1</vlan-id>
+      <name>default</name>
+      <disable delete="delete"/>
+    </vlan>
+    <vlan>
+      <vlan-id>20</vlan-id>
+      <name>prod</name>
+      <disable delete="delete"/>
+    </vlan>
+    <vlan>
+      <vlan-id>10</vlan-id>
+      <disable/>
+    </vlan>
+  </vlans>
+</configuration>

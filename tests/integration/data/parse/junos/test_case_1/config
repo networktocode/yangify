@@ -1,0 +1,43 @@
+<configuration>
+  <interfaces>
+    <interface>
+      <name>ge-0/0/0</name>
+      <disable/>
+      <unit>
+        <name>0</name>
+        <description>this is interface ge-0/0/0</description>
+      </unit>
+    </interface>
+    <interface>
+      <name>ge-0/0/1</name>
+      <unit>
+        <name>0</name>
+        <description>this is interface ge-0/0/1</description>
+      </unit>
+    </interface>
+    <interface>
+      <name>ge-0/0/2</name>
+      <unit>
+        <name>0</name>
+        <description>this is interface ge-0/0/2</description>
+      </unit>
+    </interface>
+    <interface>
+      <name>ge-0/0/3</name>
+      <unit>
+        <name>0</name>
+        <description>this is interface ge-0/0/3</description>
+      </unit>
+    </interface>
+    <interface>
+      <name>lo0</name>
+      <unit>
+        <name>0</name>
+      </unit>
+      <unit>
+        <name>3</name>
+        <description>this is interface lo0.3</description>
+      </unit>
+    </interface>
+  </interfaces>
+</configuration>

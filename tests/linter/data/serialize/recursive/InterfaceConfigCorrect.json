@@ -1,0 +1,21 @@
+{
+    "name": "config",
+    "path": "/openconfig-interfaces:interfaces/interface/config",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 28,
+    "messages": [],
+    "children": {},
+    "type": "container",
+    "class_name": "InterfaceConfigCorrect",
+    "implements": [
+        "description",
+        "enabled",
+        "mtu",
+        "name",
+        "type"
+    ],
+    "metadata": {
+        "a": 1,
+        "b": 2
+    }
+}

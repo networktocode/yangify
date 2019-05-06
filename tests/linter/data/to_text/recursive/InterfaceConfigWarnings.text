@@ -1,0 +1,2 @@
+/yangify/tests/linter/impl.py:7:W001:doesn't implement mtu
+/yangify/tests/linter/impl.py:7:W101:extra doesn't correspond to a leaf or container

@@ -1,0 +1,29 @@
+{
+    "name": "config",
+    "path": "/openconfig-interfaces:interfaces/interface/config",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 7,
+    "messages": [
+        {
+            "message": "doesn't implement mtu",
+            "message_type": "W001"
+        },
+        {
+            "message": "extra doesn't correspond to a leaf or container",
+            "message_type": "W101"
+        }
+    ],
+    "children": {},
+    "type": "container",
+    "class_name": "InterfaceConfigWarnings",
+    "implements": [
+        "description",
+        "enabled",
+        "name",
+        "type"
+    ],
+    "metadata": {
+        "a": 1,
+        "b": 2
+    }
+}

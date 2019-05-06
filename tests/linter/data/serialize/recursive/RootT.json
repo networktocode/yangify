@@ -1,0 +1,145 @@
+{
+    "name": "RootT",
+    "path": "/",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 118,
+    "messages": [],
+    "children": {
+        "interfaces": {
+            "name": "openconfig-interfaces:interfaces",
+            "path": "openconfig-interfaces:interfaces",
+            "filepath": "/yangify/tests/linter/impl.py",
+            "lineno": 119,
+            "messages": [],
+            "children": {
+                "interface": {
+                    "name": "interface",
+                    "path": "openconfig-interfaces:interfaces/interface",
+                    "filepath": "/yangify/tests/linter/impl.py",
+                    "lineno": 123,
+                    "messages": [
+                        {
+                            "message": "doesn't implement state",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement hold-time",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement subinterfaces",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement routed-vlan",
+                            "message_type": "W001"
+                        }
+                    ],
+                    "children": {
+                        "config": {
+                            "name": "config",
+                            "path": "openconfig-interfaces:interfaces/interface/config",
+                            "filepath": "/yangify/tests/linter/impl.py",
+                            "lineno": 127,
+                            "messages": [
+                                {
+                                    "message": "doesn't implement mtu",
+                                    "message_type": "W001"
+                                },
+                                {
+                                    "message": "doesn't implement enabled",
+                                    "message_type": "W001"
+                                }
+                            ],
+                            "children": {},
+                            "type": "container",
+                            "class_name": "RootT.interfaces.interface.config",
+                            "implements": [
+                                "description",
+                                "name",
+                                "type"
+                            ],
+                            "metadata": {}
+                        },
+                        "aggregation": {
+                            "name": "aggregation",
+                            "path": "openconfig-interfaces:interfaces/interface/aggregation",
+                            "filepath": "/yangify/tests/linter/impl.py",
+                            "lineno": 140,
+                            "messages": [
+                                {
+                                    "message": "Yangify.path couldn't be found in model: openconfig-interfaces:interfaces/interface/aggregation",
+                                    "message_type": "E101"
+                                }
+                            ],
+                            "children": {},
+                            "type": "container",
+                            "class_name": "RootT.interfaces.interface.aggregation",
+                            "implements": [],
+                            "metadata": {}
+                        }
+                    },
+                    "type": "container",
+                    "class_name": "RootT.interfaces.interface",
+                    "implements": [
+                        "aggregation",
+                        "config",
+                        "name"
+                    ],
+                    "metadata": {}
+                }
+            },
+            "type": "container",
+            "class_name": "RootT.interfaces",
+            "implements": [
+                "interface"
+            ],
+            "metadata": {}
+        },
+        "vlans": {
+            "name": "openconfig-vlan:vlans",
+            "path": "openconfig-vlan:vlans",
+            "filepath": "/yangify/tests/linter/impl.py",
+            "lineno": 149,
+            "messages": [],
+            "children": {
+                "vlan": {
+                    "name": "vlan",
+                    "path": "openconfig-vlan:vlans/vlan",
+                    "filepath": "/yangify/tests/linter/impl.py",
+                    "lineno": 153,
+                    "messages": [
+                        {
+                            "message": "doesn't implement vlan-id",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement config",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement state",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement members",
+                            "message_type": "W001"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "RootT.vlans.vlan",
+                    "implements": [],
+                    "metadata": {}
+                }
+            },
+            "type": "container",
+            "class_name": "RootT.vlans",
+            "implements": [
+                "vlan"
+            ],
+            "metadata": {}
+        }
+    },
+    "type": "root"
+}

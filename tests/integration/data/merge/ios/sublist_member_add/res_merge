@@ -1,0 +1,4 @@
+interface FastEthernet1.3
+   description This is Fa1.3
+   exit
+!

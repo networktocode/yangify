@@ -1,0 +1,30 @@
+hostname ntc-r1
+!
+interface GigabitEthernet1
+   description Hello GigE1
+   shutdown
+!
+interface GigabitEthernet2
+   description Hello GigE2
+!
+interface GigabitEthernet3
+   description Hello GigE3
+!
+interface GigabitEthernet4
+   description Hello GigE4
+   no lldp enable
+
+!
+interface GigabitEthernet5
+   description Hello GigE5
+!
+interface Loopback100
+  description this is loopy100
+!
+vlan 10
+vlan 20
+  name web_vlan
+vlan 30
+  name test_vlan
+!
+

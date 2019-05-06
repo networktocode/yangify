@@ -1,0 +1,17 @@
+{
+    "name": "sdadasd",
+    "path": "sdadasd",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 60,
+    "messages": [
+        {
+            "message": "Yangify.path is invalid: sdadasd",
+            "message_type": "E102"
+        }
+    ],
+    "children": {},
+    "type": "container",
+    "class_name": "InterfaceConfigInvalidPath",
+    "implements": [],
+    "metadata": {}
+}

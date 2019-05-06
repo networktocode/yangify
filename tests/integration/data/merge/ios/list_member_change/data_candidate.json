@@ -1,0 +1,19 @@
+{
+  "openconfig-vlan:vlans": {
+    "vlan": [
+      {
+        "vlan-id": 10,
+        "config": {
+          "vlan-id": 10
+        }
+      },
+      {
+        "vlan-id": 20,
+        "config": {
+          "vlan-id": 20,
+          "name": "prod"
+        }
+      }
+    ]
+  }
+}

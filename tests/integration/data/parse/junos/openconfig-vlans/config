@@ -1,0 +1,54 @@
+<configuration>
+        <interfaces>
+            <interface>
+                <name>xe-0/0/0</name>
+                <unit>
+                    <name>0</name>
+					<description>this is interface xe-0/0/0</description>
+                </unit>
+            </interface>
+            <interface>
+                <name>xe-0/0/1</name>
+                <unit>
+                    <name>0</name>
+                    <family>
+                        <ethernet-switching>
+                            <interface-mode>access</interface-mode>
+                            <vlan>
+                                <members>10</members>
+                            </vlan>
+                        </ethernet-switching>
+                    </family>
+                </unit>
+            </interface>
+            <interface>
+                <name>xe-0/0/3</name>
+                <unit>
+                    <name>0</name>
+                    <family>
+                        <ethernet-switching>
+                            <interface-mode>trunk</interface-mode>
+                            <vlan>
+                                <members>10</members>
+                                <members>20</members>
+                                <members>100</members>
+                            </vlan>
+                        </ethernet-switching>
+                    </family>
+                </unit>
+            </interface>
+        </interfaces>
+	<vlans>
+			<vlan>
+				<name>default</name>
+				<vlan-id>1</vlan-id>
+			</vlan>
+			<vlan>
+				<name>prod</name>
+				<vlan-id>20</vlan-id>
+			</vlan>
+			<vlan inactive="inactive">
+				<vlan-id>10</vlan-id>
+			</vlan>
+	</vlans>
+</configuration>

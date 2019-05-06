@@ -1,0 +1,82 @@
+{
+    "name": "openconfig-interfaces:interfaces",
+    "path": "openconfig-interfaces:interfaces",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 94,
+    "messages": [],
+    "children": {
+        "interface": {
+            "name": "interface",
+            "path": "openconfig-interfaces:interfaces/interface",
+            "filepath": "/yangify/tests/linter/impl.py",
+            "lineno": 83,
+            "messages": [
+                {
+                    "message": "doesn't implement state",
+                    "message_type": "W001"
+                },
+                {
+                    "message": "doesn't implement hold-time",
+                    "message_type": "W001"
+                },
+                {
+                    "message": "doesn't implement subinterfaces",
+                    "message_type": "W001"
+                },
+                {
+                    "message": "doesn't implement aggregation",
+                    "message_type": "W001"
+                },
+                {
+                    "message": "doesn't implement routed-vlan",
+                    "message_type": "W001"
+                }
+            ],
+            "children": {
+                "config": {
+                    "name": "config",
+                    "path": "/openconfig-interfaces:interfaces/interface/config",
+                    "filepath": "/yangify/tests/linter/impl.py",
+                    "lineno": 7,
+                    "messages": [
+                        {
+                            "message": "doesn't implement mtu",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "extra doesn't correspond to a leaf or container",
+                            "message_type": "W101"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "InterfaceConfigWarnings",
+                    "implements": [
+                        "description",
+                        "enabled",
+                        "name",
+                        "type"
+                    ],
+                    "metadata": {
+                        "a": 1,
+                        "b": 2
+                    }
+                }
+            },
+            "type": "container",
+            "class_name": "Interface",
+            "implements": [
+                "config",
+                "ethernet",
+                "name"
+            ],
+            "metadata": {}
+        }
+    },
+    "type": "container",
+    "class_name": "Interfaces",
+    "implements": [
+        "interface"
+    ],
+    "metadata": {}
+}

@@ -1,0 +1,7 @@
+<configuration>
+  <vlans>
+    <vlan>
+      <vlan-id>10</vlan-id>
+    </vlan>
+  </vlans>
+</configuration>

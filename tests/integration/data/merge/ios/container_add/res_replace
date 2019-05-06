@@ -1,0 +1,7 @@
+default interface FastEthernet1
+interface FastEthernet1
+   description This is Fa1.1
+   switchport mode trunk
+   switchport trunk allowed vlan 10,20
+   exit
+!

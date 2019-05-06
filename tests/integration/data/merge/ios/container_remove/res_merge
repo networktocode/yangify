@@ -1,0 +1,5 @@
+interface FastEthernet1
+   switchport mode access
+   switchport trunk allowed vlan 1
+   exit
+!

@@ -1,0 +1,30 @@
+{
+  "openconfig-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "FastEthernet1",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "FastEthernet1",
+          "enabled": false
+        }
+      },
+      {
+        "name": "FastEthernet3",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "FastEthernet3",
+          "enabled": true
+        }
+      },
+      {
+        "name": "FastEthernet4",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "FastEthernet4",
+          "enabled": false
+        }
+      }
+    ]
+  }
+}

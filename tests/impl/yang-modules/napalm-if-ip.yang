@@ -1,0 +1,56 @@
+module napalm-if-ip {
+    yang-version "1";
+
+    namespace "https://github.com/napalm-automation/napalm-yang/yang_napalm/interfaces";
+
+    prefix "napalm-ip";
+
+    import openconfig-interfaces { prefix oc-if; }
+    import openconfig-vlan { prefix oc-vlan; }
+    import openconfig-if-ip { prefix oc-ip; }
+
+    organization "NAPALM Automation";
+
+    contact "napalm-automation@googlegroups.com";
+
+    description "This module defines some augmentations to the interface's IP model of OC";
+
+    revision "2017-03-17" {
+      description
+        "First release";
+      reference "1.0.0";
+    }
+
+    grouping secondary-top {
+        description "Add secondary statement";
+
+        leaf secondary {
+            type boolean;
+            default "false";
+
+            description
+            "Most platforms need a secondary statement on when configuring multiple IPv4 addresses
+            on the same interfaces";
+
+            reference "https://www.cisco.com/c/en/us/td/docs/ios/12_2/ip/configuration/guide/fipr_c/1cfipadr.html#wp1001012";
+        }
+    }
+
+    augment "/oc-if:interfaces/oc-if:interface/" +
+        "oc-if:subinterfaces/oc-if:subinterface/" +
+        "oc-ip:ipv4/oc-ip:addresses/oc-ip:address/" +
+        "oc-ip:config" {
+        description "Add secondary statement to subinterfaces' IPs";
+
+        uses secondary-top;
+    }
+
+    augment "/oc-if:interfaces/oc-if:interface/" +
+        "oc-vlan:routed-vlan/" +
+        "oc-ip:ipv4/oc-ip:addresses/oc-ip:address/" +
+        "oc-ip:config" {
+        description "Add secondary statement to routed VLANs' IPs";
+
+        uses secondary-top;
+    }
+}

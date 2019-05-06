@@ -1,0 +1,7 @@
+<configuration>
+  <interfaces replace="replace">
+    <interface>
+      <name>xe-0/0/0</name>
+    </interface>
+  </interfaces>
+</configuration>

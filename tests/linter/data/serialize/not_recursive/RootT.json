@@ -1,0 +1,38 @@
+{
+    "name": "RootT",
+    "path": "/",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 118,
+    "messages": [],
+    "children": {
+        "interfaces": {
+            "name": "openconfig-interfaces:interfaces",
+            "path": "openconfig-interfaces:interfaces",
+            "filepath": "/yangify/tests/linter/impl.py",
+            "lineno": 119,
+            "messages": [],
+            "children": {},
+            "type": "container",
+            "class_name": "RootT.interfaces",
+            "implements": [
+                "interface"
+            ],
+            "metadata": {}
+        },
+        "vlans": {
+            "name": "openconfig-vlan:vlans",
+            "path": "openconfig-vlan:vlans",
+            "filepath": "/yangify/tests/linter/impl.py",
+            "lineno": 149,
+            "messages": [],
+            "children": {},
+            "type": "container",
+            "class_name": "RootT.vlans",
+            "implements": [
+                "vlan"
+            ],
+            "metadata": {}
+        }
+    },
+    "type": "root"
+}

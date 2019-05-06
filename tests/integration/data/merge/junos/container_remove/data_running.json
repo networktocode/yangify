@@ -1,0 +1,35 @@
+{
+  "openconfig-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "xe-0/0/0",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "xe-0/0/0"
+        },
+        "openconfig-if-ethernet:ethernet": {
+          "openconfig-vlan:switched-vlan": {
+            "config": {
+              "interface-mode": "TRUNK",
+              "trunk-vlans": [
+                10,
+                20
+              ]
+            }
+          }
+        },
+        "subinterfaces": {
+          "subinterface": [
+            {
+              "index": 0,
+              "config": {
+                "index": 0,
+                "description": "This is xe-0/0/0"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+<configuration>
+  <interfaces replace="replace">
+    <interface>
+      <name>xe-0/0/0</name>
+      <unit>
+        <name>0</name>
+        <description>This is xe-0/0/0</description>
+        <family>
+          <ethernet-switching>
+            <interface-mode>trunk</interface-mode>
+            <vlan>
+              <members>10</members>
+              <members>20</members>
+            </vlan>
+          </ethernet-switching>
+        </family>
+      </unit>
+    </interface>
+  </interfaces>
+</configuration>

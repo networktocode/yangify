@@ -1,0 +1,11 @@
+/yangify/tests/linter/impl.py:123:W001:doesn't implement state
+/yangify/tests/linter/impl.py:123:W001:doesn't implement hold-time
+/yangify/tests/linter/impl.py:123:W001:doesn't implement subinterfaces
+/yangify/tests/linter/impl.py:123:W001:doesn't implement routed-vlan
+/yangify/tests/linter/impl.py:127:W001:doesn't implement mtu
+/yangify/tests/linter/impl.py:127:W001:doesn't implement enabled
+/yangify/tests/linter/impl.py:140:E101:Yangify.path couldn't be found in model: openconfig-interfaces:interfaces/interface/aggregation
+/yangify/tests/linter/impl.py:153:W001:doesn't implement vlan-id
+/yangify/tests/linter/impl.py:153:W001:doesn't implement config
+/yangify/tests/linter/impl.py:153:W001:doesn't implement state
+/yangify/tests/linter/impl.py:153:W001:doesn't implement members

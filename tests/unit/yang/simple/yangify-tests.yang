@@ -1,0 +1,31 @@
+module yangify-tests {
+    namespace "https://github.com/path/to/yangify.yang";
+    prefix yt;
+
+    revision "2019-02-22" {
+      reference "1.0.0";
+    }
+
+    container start {
+        container elements {
+            list element {
+                key "name";
+                leaf name {
+                    type string;
+                }
+                container config {
+                    config true;
+                    leaf description {
+                        type string;
+                    }
+                }
+                container state {
+                    config false;
+                    leaf description {
+                        type string;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "openconfig-interfaces:interfaces": {
+    "interface": [
+      {
+        "name": "FastEthernet1",
+        "config": {
+          "type": "iana-if-type:ethernetCsmacd",
+          "name": "FastEthernet1",
+          "description": "This is Fa1.1"
+        },
+        "openconfig-if-ethernet:ethernet": {
+          "openconfig-vlan:switched-vlan": {
+            "config": {
+              "interface-mode": "TRUNK",
+              "trunk-vlans": [
+                10,
+                20
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

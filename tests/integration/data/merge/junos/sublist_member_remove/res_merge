@@ -1,0 +1,10 @@
+<configuration>
+  <interfaces>
+    <interface>
+      <name>xe-0/0/0</name>
+      <unit delete="delete">
+        <name>1</name>
+      </unit>
+    </interface>
+  </interfaces>
+</configuration>

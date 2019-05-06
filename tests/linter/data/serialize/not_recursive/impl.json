@@ -1,0 +1,331 @@
+{
+    "name": "tests/linter/impl.py",
+    "path": "n/a",
+    "filepath": "tests/linter/impl.py",
+    "lineno": 0,
+    "messages": [],
+    "children": {
+        "tests/linter/impl.py": {
+            "name": "tests/linter/impl.py",
+            "path": "n/a",
+            "filepath": "tests/linter/impl.py",
+            "lineno": 0,
+            "messages": [],
+            "children": {
+                "Ethernet": {
+                    "name": "openconfig-if-ethernet:ethernet",
+                    "path": "openconfig-interfaces:interfaces/interface/openconfig-if-ethernet:ethernet",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 74,
+                    "messages": [
+                        {
+                            "message": "doesn't implement config",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement state",
+                            "message_type": "W001"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "Ethernet",
+                    "implements": [
+                        "switched_vlan"
+                    ],
+                    "metadata": {}
+                },
+                "Interface": {
+                    "name": "interface",
+                    "path": "openconfig-interfaces:interfaces/interface",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 83,
+                    "messages": [
+                        {
+                            "message": "doesn't implement state",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement hold-time",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement subinterfaces",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement aggregation",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement routed-vlan",
+                            "message_type": "W001"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "Interface",
+                    "implements": [
+                        "config",
+                        "ethernet",
+                        "name"
+                    ],
+                    "metadata": {}
+                },
+                "InterfaceConfigCorrect": {
+                    "name": "config",
+                    "path": "/openconfig-interfaces:interfaces/interface/config",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 28,
+                    "messages": [],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "InterfaceConfigCorrect",
+                    "implements": [
+                        "description",
+                        "enabled",
+                        "mtu",
+                        "name",
+                        "type"
+                    ],
+                    "metadata": {
+                        "a": 1,
+                        "b": 2
+                    }
+                },
+                "InterfaceConfigInvalidPath": {
+                    "name": "sdadasd",
+                    "path": "sdadasd",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 60,
+                    "messages": [
+                        {
+                            "message": "Yangify.path is invalid: sdadasd",
+                            "message_type": "E102"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "InterfaceConfigInvalidPath",
+                    "implements": [],
+                    "metadata": {}
+                },
+                "InterfaceConfigMissingImplements": {
+                    "name": "",
+                    "path": "",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 49,
+                    "messages": [
+                        {
+                            "message": "Yangify.path is not set or empty",
+                            "message_type": "E001"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "InterfaceConfigMissingImplements",
+                    "implements": [],
+                    "metadata": {}
+                },
+                "InterfaceConfigWarnings": {
+                    "name": "config",
+                    "path": "/openconfig-interfaces:interfaces/interface/config",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 7,
+                    "messages": [
+                        {
+                            "message": "doesn't implement mtu",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "extra doesn't correspond to a leaf or container",
+                            "message_type": "W101"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "InterfaceConfigWarnings",
+                    "implements": [
+                        "description",
+                        "enabled",
+                        "name",
+                        "type"
+                    ],
+                    "metadata": {
+                        "a": 1,
+                        "b": 2
+                    }
+                },
+                "InterfaceConfigWrongPath": {
+                    "name": "conf",
+                    "path": "/openconfig-interfaces:interfaces/interface/conf",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 53,
+                    "messages": [
+                        {
+                            "message": "Yangify.path couldn't be found in model: /openconfig-interfaces:interfaces/interface/conf",
+                            "message_type": "E101"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "InterfaceConfigWrongPath",
+                    "implements": [],
+                    "metadata": {}
+                },
+                "Interfaces": {
+                    "name": "openconfig-interfaces:interfaces",
+                    "path": "openconfig-interfaces:interfaces",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 94,
+                    "messages": [],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "Interfaces",
+                    "implements": [
+                        "interface"
+                    ],
+                    "metadata": {}
+                },
+                "RootP": {
+                    "name": "RootP",
+                    "path": "/",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 113,
+                    "messages": [],
+                    "children": {
+                        "interfaces": {
+                            "name": "openconfig-interfaces:interfaces",
+                            "path": "openconfig-interfaces:interfaces",
+                            "filepath": "tests/linter/impl.py",
+                            "lineno": 94,
+                            "messages": [],
+                            "children": {},
+                            "type": "container",
+                            "class_name": "Interfaces",
+                            "implements": [
+                                "interface"
+                            ],
+                            "metadata": {}
+                        },
+                        "vlans": {
+                            "name": "openconfig-vlan:vlans",
+                            "path": "openconfig-vlan:vlans",
+                            "filepath": "tests/linter/impl.py",
+                            "lineno": 106,
+                            "messages": [],
+                            "children": {},
+                            "type": "container",
+                            "class_name": "Vlans",
+                            "implements": [
+                                "vlan"
+                            ],
+                            "metadata": {}
+                        }
+                    },
+                    "type": "root"
+                },
+                "RootT": {
+                    "name": "RootT",
+                    "path": "/",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 118,
+                    "messages": [],
+                    "children": {
+                        "interfaces": {
+                            "name": "openconfig-interfaces:interfaces",
+                            "path": "openconfig-interfaces:interfaces",
+                            "filepath": "tests/linter/impl.py",
+                            "lineno": 119,
+                            "messages": [],
+                            "children": {},
+                            "type": "container",
+                            "class_name": "RootT.interfaces",
+                            "implements": [
+                                "interface"
+                            ],
+                            "metadata": {}
+                        },
+                        "vlans": {
+                            "name": "openconfig-vlan:vlans",
+                            "path": "openconfig-vlan:vlans",
+                            "filepath": "tests/linter/impl.py",
+                            "lineno": 149,
+                            "messages": [],
+                            "children": {},
+                            "type": "container",
+                            "class_name": "RootT.vlans",
+                            "implements": [
+                                "vlan"
+                            ],
+                            "metadata": {}
+                        }
+                    },
+                    "type": "root"
+                },
+                "SwitchedVlan": {
+                    "name": "openconfig-vlan:switched-vlan",
+                    "path": "openconfig-vlan:switched-vlan",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 67,
+                    "messages": [
+                        {
+                            "message": "Yangify.path couldn't be found in model: openconfig-vlan:switched-vlan",
+                            "message_type": "E101"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "SwitchedVlan",
+                    "implements": [],
+                    "metadata": {}
+                },
+                "Vlan": {
+                    "name": "vlan",
+                    "path": "openconfig-vlan:vlans/vlan",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 101,
+                    "messages": [
+                        {
+                            "message": "doesn't implement vlan-id",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement config",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement state",
+                            "message_type": "W001"
+                        },
+                        {
+                            "message": "doesn't implement members",
+                            "message_type": "W001"
+                        }
+                    ],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "Vlan",
+                    "implements": [],
+                    "metadata": {}
+                },
+                "Vlans": {
+                    "name": "openconfig-vlan:vlans",
+                    "path": "openconfig-vlan:vlans",
+                    "filepath": "tests/linter/impl.py",
+                    "lineno": 106,
+                    "messages": [],
+                    "children": {},
+                    "type": "container",
+                    "class_name": "Vlans",
+                    "implements": [
+                        "vlan"
+                    ],
+                    "metadata": {}
+                }
+            },
+            "type": "module"
+        }
+    },
+    "type": "file"
+}

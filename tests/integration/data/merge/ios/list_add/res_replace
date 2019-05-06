@@ -1,0 +1,4 @@
+no vlan 10
+vlan 10
+   exit
+!

@@ -1,0 +1,17 @@
+{
+    "name": "",
+    "path": "",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 49,
+    "messages": [
+        {
+            "message": "Yangify.path is not set or empty",
+            "message_type": "E001"
+        }
+    ],
+    "children": {},
+    "type": "container",
+    "class_name": "InterfaceConfigMissingImplements",
+    "implements": [],
+    "metadata": {}
+}

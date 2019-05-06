@@ -1,0 +1,7 @@
+<configuration>
+  <vlans replace="replace">
+    <vlan>
+      <vlan-id>10</vlan-id>
+    </vlan>
+  </vlans>
+</configuration>

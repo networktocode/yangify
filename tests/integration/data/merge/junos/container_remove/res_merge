@@ -1,0 +1,16 @@
+<configuration>
+  <interfaces>
+    <interface>
+      <name>xe-0/0/0</name>
+      <unit>
+        <name>0</name>
+        <family>
+          <ethernet-switching>
+            <interface-mode delete="delete"/>
+            <vlan delete="delete"/>
+          </ethernet-switching>
+        </family>
+      </unit>
+    </interface>
+  </interfaces>
+</configuration>

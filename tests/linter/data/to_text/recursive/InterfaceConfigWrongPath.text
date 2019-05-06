@@ -1,0 +1,1 @@
+/yangify/tests/linter/impl.py:53:E101:Yangify.path couldn't be found in model: /openconfig-interfaces:interfaces/interface/conf

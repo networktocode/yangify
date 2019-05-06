@@ -1,0 +1,16 @@
+default interface FastEthernet1
+no interface FastEthernet1.1
+no interface FastEthernet1.2
+interface FastEthernet1.1
+   description This is Fa1.1
+   exit
+!
+interface FastEthernet1.2
+   description This is Fa1.2
+   exit
+!
+no interface FastEthernet1.3
+interface FastEthernet1.3
+   description This is Fa1.3
+   exit
+!
