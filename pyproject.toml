@@ -1,7 +1,8 @@
 [tool.poetry]
 name = "yangify"
-version = "0.1.0"
+version = "0.1.1"
 description = "Library to help parsing/translating YANG models from/to native text/structures"
+readme = "README.md"
 authors = ["David Barroso <dbarrosop@dravetech.com>"]
 license = "Apache-2.0"
 
