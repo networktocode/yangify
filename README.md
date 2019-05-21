@@ -55,7 +55,7 @@ Start a container so you can run Jupyter notebooks:
 
 
 ```
-make jupyter
+make dev_jupyter
 ```
 
 **Step 5**
