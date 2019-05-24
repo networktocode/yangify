@@ -16,11 +16,7 @@ from yangson.exceptions import SemanticError
 
 LIB = "../yang/yang-library-data.json"
 
-MODELS = [
-    "../yang/yang-modules/ietf",
-    "../yang/yang-modules/openconfig",
-    "../yang/yang-modules/ntc",
-]
+MODELS = ["../yang/yang-modules/ietf", "../yang/yang-modules/openconfig"]
 
 dm = DataModel.from_file(LIB, MODELS)
 
