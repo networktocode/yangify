@@ -143,8 +143,8 @@ Navigate into the `parsing-quickstart` directory (inside the container):
 
 
 ```
-root@e726de8f2226:/yangify# cd docs/tutorial/parsing-quickstart/
-root@e726de8f2226:/yangify/docs/tutorial/parsing-quickstart# 
+root@e726de8f2226:/yangify# cd docs/tutorials/parsing-quickstart/
+root@e726de8f2226:/yangify/docs/tutorials/parsing-quickstart# 
 ```
 
 **Step 7**
@@ -154,7 +154,7 @@ Try out the `dev-yangify.py` script:
 
 
 ```
-root@e726de8f2226:/yangify/docs/tutorial/parsing-quickstart# python dev-yangify.py --vlans
+root@e726de8f2226:/yangify/docs/tutorials/parsing-quickstart# python dev-yangify.py --vlans
 {
     "openconfig-vlan:vlans": {
         "vlan": [
@@ -184,7 +184,7 @@ root@e726de8f2226:/yangify/docs/tutorial/parsing-quickstart# python dev-yangify.
         ]
     }
 }
-root@e726de8f2226:/yangify/docs/tutorial/parsing-quickstart# 
+root@e726de8f2226:/yangify/docs/tutorials/parsing-quickstart# 
 ```
 
 
