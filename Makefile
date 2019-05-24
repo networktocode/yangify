@@ -103,7 +103,7 @@ _jupyter:
 
 .PHONY: jupyter
 jupyter:
-	${DOCKER} \
+	${DEV_JUPYTER} \
 		make _jupyter
 
 .PHONY: _jupyter_save
