@@ -77,6 +77,10 @@ class TranslatorData:
         to_remove (`List[yangson.instance.ObjectMember]`): When processing YANG lists and performing
             either a merge or replace operation, this List will be populated with the elements
             that need to be removed.
+
+        extra (`Dict[str, Any]`): Arbitrary data that can be defined by the user when instantiating
+            the root of the object. Useful to share arbitrary information throughout the entire
+            lifecycle of the translator
     """
 
     path = ""
@@ -92,6 +96,7 @@ class TranslatorData:
         candidate: instance.ObjectMember,
         running: Optional[instance.ObjectMember],
         replace: bool,
+        extra: Dict[str, Any],
     ) -> None:
         self.result = result
         self.root_result = root_result
@@ -102,6 +107,7 @@ class TranslatorData:
         self.running = running
         self.replace = replace
         self.to_remove: List[instance.ArrayEntry] = []
+        self.extra = extra
 
     def init(self) -> None:
         """
@@ -188,10 +194,11 @@ class Translator:
         candidate: instance.ObjectMember,
         running: Optional[instance.ObjectMember],
         replace: bool,
+        extra: Dict[str, Any],
     ) -> None:
         self.dm = dm
         self.yy = self.Yangify(
-            result, root_result, path, schema, keys, candidate, running, replace
+            result, root_result, path, schema, keys, candidate, running, replace, extra
         )
 
     def _obj_changed(self, irt: instance.InstanceRoute) -> bool:
@@ -270,6 +277,7 @@ class Translator:
             self.yy.candidate,
             self.yy.running,
             self.yy.replace,
+            self.yy.extra,
         )
 
     def _get_key_name(self, node: schemanode.DataNode) -> str:
@@ -427,6 +435,7 @@ class Translator:
                 self.yy.candidate,
                 self.yy.running,
                 self.yy.replace,
+                self.yy.extra,
             )._process_container()
         self.yy.keys = running_keys
         self.yy.post_process_list()
@@ -448,6 +457,10 @@ class RootTranslator(Translator):
             another. Pretty much like :obj:`TranslatorData.candidate`, but with the running data.
 
         replace: Whether we are merging candidate into running or replacing it entirely.
+
+        extra (`Dict[str, Any]`): Arbitrary data that can be defined by the user when instantiating
+            the root of the object. Useful to share arbitrary information throughout the entire
+            lifecycle of the parser
 
     Examples:
 
@@ -482,6 +495,7 @@ class RootTranslator(Translator):
         candidate: Dict[str, Any],
         running: Optional[Dict[str, Any]] = None,
         replace: bool = False,
+        extra: Dict[str, Any] = None,
     ) -> None:
         n = dm.from_raw(candidate)
         if running is not None:
@@ -490,7 +504,16 @@ class RootTranslator(Translator):
             o = None
 
         super().__init__(
-            None, None, instance.InstanceRoute(), dm, dm.schema, {}, n, o, replace
+            None,
+            None,
+            instance.InstanceRoute(),
+            dm,
+            dm.schema,
+            {},
+            n,
+            o,
+            replace,
+            extra or {},
         )
 
     def __str__(self) -> str:
