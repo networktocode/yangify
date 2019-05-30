@@ -60,6 +60,10 @@ class ParserData:
                     "openconfig-interfaces:interfaces/interface": "FastEthernet1",
                     "openconfig-interfaces:interfaces/interface/subinterfaces/subinterface": 1,
                 }
+
+        extra (`Dict[str, Any]`): Arbitrary data that can be defined by the user when instantiating
+            the root of the object. Useful to share arbitrary information throughout the entire
+            lifecycle of the parser
     """
 
     path = ""
@@ -71,11 +75,13 @@ class ParserData:
         native: Any,
         root_native: Any,
         keys: Dict[str, str],
+        extra: Dict[str, Any],
     ) -> None:
         self.schema = schema
         self.native = native
         self.root_native = root_native
         self.keys = keys
+        self.extra = extra
 
     @property
     def key(self) -> str:
@@ -159,9 +165,10 @@ class Parser:
         native: Any,
         root_native: Any,
         keys: Dict[str, str],
+        extra: Dict[str, Any],
     ) -> None:
         self.model_filter = model_filter
-        self.yy: ParserData = self.Yangify(schema, native, root_native, keys)
+        self.yy: ParserData = self.Yangify(schema, native, root_native, keys, extra)
 
     def __str__(self) -> str:
         return str(self.yy.schema.data_path())
@@ -181,6 +188,7 @@ class Parser:
                 self.yy.native,
                 self.yy.root_native,
                 self.yy.keys,
+                self.yy.extra,
             ),
         )
 
@@ -287,6 +295,10 @@ class RootParser(Parser):
 
         state: Parse state leaves
 
+        extra (`Dict[str, Any]`): Arbitrary data that can be defined by the user when instantiating
+            the root of the object. Useful to share arbitrary information throughout the entire
+            lifecycle of the parser
+
     Examples:
 
         Parsing both ``openconfig-interfaces`` and ``openconfig-vlan`` models::
@@ -322,6 +334,7 @@ class RootParser(Parser):
         state: bool = False,
         include: Optional[List[str]] = None,
         exclude: Optional[List[str]] = None,
+        extra: Dict[str, Any] = None,
     ) -> None:
         if not config and not state:
             raise ValueError("either config or state must be true")
@@ -330,7 +343,7 @@ class RootParser(Parser):
         self.state = state
         include = include if include is not None else ["/"]
         model_filter = ModelFilter(include=include, exclude=exclude or [])
-        super().__init__(self.dm.schema, model_filter, native, native, {})
+        super().__init__(self.dm.schema, model_filter, native, native, {}, extra or {})
 
     def __str__(self) -> str:
         return self.__class__.__qualname__
