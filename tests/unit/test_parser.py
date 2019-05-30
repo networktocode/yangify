@@ -23,6 +23,41 @@ test_data = {
     },
 }
 
+test_expected_config = {
+    "yangify-tests:start": {
+        "elements": {
+            "element": [
+                {
+                    "name": "element1",
+                    "config": {"description": "this is element1.config.description"},
+                },
+                {
+                    "name": "element2",
+                    "config": {"description": "this is element2.config.description"},
+                },
+            ]
+        }
+    }
+}
+
+
+test_expected_state = {
+    "yangify-tests:start": {
+        "elements": {
+            "element": [
+                {
+                    "name": "element1",
+                    "state": {"description": "this is element1.state.description"},
+                },
+                {
+                    "name": "element2",
+                    "state": {"description": "this is element2.state.description"},
+                },
+            ]
+        }
+    }
+}
+
 
 class ConfigParser(parser.Parser):
     class Yangify(parser.ParserData):
@@ -65,6 +100,12 @@ class RootTestParser(parser.RootParser):
 
 
 class RootTestParserWithExtra(parser.RootParser):
+    """
+    This is just a sample parser similar to RootTestParser
+    but that asserts at different points that `extra`
+    is set to a predetermined value
+    """
+
     class start(parser.Parser):
         class elements(parser.Parser):
             class element(parser.Parser):
@@ -128,99 +169,23 @@ class Test:
     def test_parse_config(self) -> None:
         parser = RootTestParser(dm, test_data, config=True, state=False)
         parsed_obj = parser.process()
-        assert parsed_obj.raw_value() == {
-            "yangify-tests:start": {
-                "elements": {
-                    "element": [
-                        {
-                            "name": "element1",
-                            "config": {
-                                "description": "this is element1.config.description"
-                            },
-                        },
-                        {
-                            "name": "element2",
-                            "config": {
-                                "description": "this is element2.config.description"
-                            },
-                        },
-                    ]
-                }
-            }
-        }
+        assert parsed_obj.raw_value() == test_expected_config
 
     def test_parse_state(self) -> None:
         parser = RootTestParser(dm, test_data, config=False, state=True)
         parsed_obj = parser.process()
-        assert parsed_obj.raw_value() == {
-            "yangify-tests:start": {
-                "elements": {
-                    "element": [
-                        {
-                            "name": "element1",
-                            "state": {
-                                "description": "this is element1.state.description"
-                            },
-                        },
-                        {
-                            "name": "element2",
-                            "state": {
-                                "description": "this is element2.state.description"
-                            },
-                        },
-                    ]
-                }
-            }
-        }
+        assert parsed_obj.raw_value() == test_expected_state
 
     def test_parse_config_with_extra(self) -> None:
         parser = RootTestParserWithExtra(
             dm, test_data, config=True, state=False, extra={"os_version": "test"}
         )
         parsed_obj = parser.process()
-        assert parsed_obj.raw_value() == {
-            "yangify-tests:start": {
-                "elements": {
-                    "element": [
-                        {
-                            "name": "element1",
-                            "config": {
-                                "description": "this is element1.config.description"
-                            },
-                        },
-                        {
-                            "name": "element2",
-                            "config": {
-                                "description": "this is element2.config.description"
-                            },
-                        },
-                    ]
-                }
-            }
-        }
+        assert parsed_obj.raw_value() == test_expected_config
 
     def test_parse_state_with_extra(self) -> None:
         parser = RootTestParserWithExtra(
             dm, test_data, config=False, state=True, extra={"os_version": "test"}
         )
         parsed_obj = parser.process()
-        assert parsed_obj.raw_value() == {
-            "yangify-tests:start": {
-                "elements": {
-                    "element": [
-                        {
-                            "name": "element1",
-                            "state": {
-                                "description": "this is element1.state.description"
-                            },
-                        },
-                        {
-                            "name": "element2",
-                            "state": {
-                                "description": "this is element2.state.description"
-                            },
-                        },
-                    ]
-                }
-            }
-        }
+        assert parsed_obj.raw_value() == test_expected_state

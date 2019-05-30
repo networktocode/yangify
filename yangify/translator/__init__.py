@@ -504,16 +504,16 @@ class RootTranslator(Translator):
             o = None
 
         super().__init__(
-            None,
-            None,
-            instance.InstanceRoute(),
-            dm,
-            dm.schema,
-            {},
-            n,
-            o,
-            replace,
-            extra or {},
+            result=None,
+            root_result=None,
+            path=instance.InstanceRoute(),
+            dm=dm,
+            schema=dm.schema,
+            keys={},
+            candidate=n,
+            running=o,
+            replace=replace,
+            extra=extra or {},
         )
 
     def __str__(self) -> str:

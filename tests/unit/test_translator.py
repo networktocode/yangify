@@ -29,8 +29,25 @@ test_data = {
     }
 }
 
+test_expected = {
+    "element1": {
+        "description": "this is element1.config.description",
+        "name": "element1",
+    },
+    "element2": {
+        "description": "this is element2.config.description",
+        "name": "element2",
+    },
+}
+
 
 class RootTestTranslatorWithExtra(translator.RootTranslator):
+    """
+    This is just a sample translator
+    but that asserts at different points that `extra`
+    is set to a predetermined value
+    """
+
     class Yangify(translator.TranslatorData):
         def init(self) -> None:
             self.root_result = {}
@@ -68,13 +85,4 @@ class Test:
             dm, candidate=test_data, extra={"os_version": "test"}
         )
         translated_obj = translater.process()
-        assert translated_obj == {
-            "element1": {
-                "description": "this is element1.config.description",
-                "name": "element1",
-            },
-            "element2": {
-                "description": "this is element2.config.description",
-                "name": "element2",
-            },
-        }
+        assert translated_obj == test_expected
