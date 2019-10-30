@@ -1,4 +1,5 @@
 import pathlib
+import logging
 from typing import Any, Dict, Iterator, Tuple, cast
 
 from yangify import parser
@@ -135,6 +136,16 @@ class RootTestParserWithExtra(parser.RootParser):
                         return cast(str, self.yy.native["state"]["description"])
 
 
+class NotInModel(parser.Parser):
+    def description(self) -> str:
+        return "doesn't do anything"
+
+
+class WarnTestParser(parser.RootParser):
+    start = StartParser
+    notinmodel = NotInModel
+
+
 class Test:
     def test_parse_all(self) -> None:
         parser = RootTestParser(dm, test_data, config=True, state=True)
@@ -189,3 +200,15 @@ class Test:
         )
         parsed_obj = parser.process()
         assert parsed_obj.raw_value() == test_expected_state
+
+    def test_parse_warning(self, caplog: Any) -> None:
+        """Assert that a warning is raised for elements no in the dm"""
+        parser = RootTestParser(dm, test_data, config=False, state=True)
+        with caplog.at_level(logging.WARNING):
+            parser.process()
+        assert "attributes {'" not in caplog.text
+
+        parser = WarnTestParser(dm, test_data, config=True, state=False)
+        with caplog.at_level(logging.WARNING):
+            parser.process()
+        assert "attributes" in caplog.text and "notinmodel" in caplog.text
