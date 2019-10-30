@@ -10,7 +10,6 @@ license = "Apache-2.0"
 python = "^3.6"
 yangson = "^1.3"
 dataclasses = { version = "^0.6.0", python = "~3.6" }
-textfsm = "^1.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
@@ -25,6 +24,7 @@ lxml = "^4.3"
 xmltodict = "^0.11.0"
 jupyter = "^1.0"
 nbval = "^0.9.1"
+textfsm = "^1.1"
 
 [build-system]
 requires = ["poetry>=0.12.4"]
