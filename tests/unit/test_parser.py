@@ -208,7 +208,7 @@ class Test:
             parser.process()
         assert "attributes {'" not in caplog.text
 
-        parser = WarnTestParser(dm, test_data, config=True, state=False)
+        parser_ = WarnTestParser(dm, test_data, config=True, state=False)
         with caplog.at_level(logging.WARNING):
-            parser.process()
+            parser_.process()
         assert "attributes" in caplog.text and "notinmodel" in caplog.text
