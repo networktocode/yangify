@@ -1,5 +1,7 @@
 import copy
 import logging
+from inspect import getmembers
+from collections import namedtuple
 from typing import Any, Dict, Iterator, List, Optional, Tuple, cast
 
 from yangify.model_filter import ModelFilter
@@ -198,10 +200,26 @@ class Parser:
         else:
             return f"{node.ns}:{node.name}"
 
+    def _check_members(self) -> None:
+        """Check defined attributes that aren't in the schema."""
+        cls_tup = namedtuple("cls_tup", "name type")
+        class_attrs = set()
+        for t in getmembers(self, is_yangify_class):
+            t = cls_tup(*t)
+            if not t.name.startswith("__"):
+                class_attrs.add(t.name)
+        model_attrs = {m.name.replace("-", "_") for m in self.yy.schema.data_children()}
+        diff = class_attrs - model_attrs
+        if diff:
+            logger.warning(
+                "attributes %s have been defined and are not in the model schema", diff
+            )
+
     def _process_container(
         self, config: bool, state: bool, keys: List[str]
     ) -> Dict[str, Any]:
         logger.debug("%s: processing", self)
+        self._check_members()
         self.yy.pre_process()
         result: Dict[str, Any] = {}
         try:
@@ -277,6 +295,10 @@ class Parser:
         self.yy.keys = old_keys
         self.yy.native = old_native
         return result
+
+
+def is_yangify_class(cls: Parser) -> bool:
+    return isinstance(cls, type) and issubclass(cls, Parser)
 
 
 class RootParser(Parser):
