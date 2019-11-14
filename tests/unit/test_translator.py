@@ -21,14 +21,14 @@ test_data = {
                     "name": "element1",
                     "config": {
                         "description": "this is element1.config.description",
-                        "members": ["the", "first", "list"]
+                        "members": ["the", "first", "list"],
                     },
                 },
                 {
                     "name": "element2",
                     "config": {
                         "description": "this is element2.config.description",
-                        "members": ["the", "second", "list"]
+                        "members": ["the", "second", "list"],
                     },
                 },
             ]
@@ -57,14 +57,14 @@ test_leaf_list_candidate = {
                     "name": "element1",
                     "config": {
                         "description": "this is element1.config.description",
-                        "members": ["one", "two"]
+                        "members": ["one", "two"],
                     },
                 },
                 {
                     "name": "element2",
                     "config": {
                         "description": "this is element2.config.description",
-                        "members": ["one", "two"]
+                        "members": ["one", "two"],
                     },
                 },
             ]
@@ -80,20 +80,21 @@ test_leaf_list_running = {
                     "name": "element1",
                     "config": {
                         "description": "this is element1.config.description",
-                        "members": ["one", "two", "three"]
+                        "members": ["one", "two", "three"],
                     },
                 },
                 {
                     "name": "element2",
                     "config": {
                         "description": "this is element2.config.description",
-                        "members": ["one", "two", "three"]
+                        "members": ["one", "two", "three"],
                     },
                 },
             ]
         }
     }
 }
+
 
 class RootTestTranslatorWithExtra(translator.RootTranslator):
     """
@@ -182,7 +183,9 @@ class Test:
         )
         translated_obj = translator.process()
         # Nested dicts require key order to match in comparisons
-        assert json.dumps(translated_obj, sort_keys=True) == json.dumps(test_expected, sort_keys=True)
+        assert json.dumps(translated_obj, sort_keys=True) == json.dumps(
+            test_expected, sort_keys=True
+        )
 
     def test_translate_config_leaf_list(self) -> None:
         translator = RootTestTranslatorPreProcessLeafList(
