@@ -3,7 +3,7 @@ override PYTHON=3.6
 endif
 
 NAME=yangify
-DOCKER=docker run -v $(PWD):/yangify yangify-${PYTHON}:latest
+DOCKER=docker run -it -v $(PWD):/yangify yangify-${PYTHON}:latest
 DEV_JUPYTER=docker run -p 8888:8888 -v $(PWD):/yangify ${NAME}-${PYTHON}:latest
 DEV_ME=docker run -it -v $(PWD):/yangify ${NAME}-${PYTHON}:latest /bin/bash
 
