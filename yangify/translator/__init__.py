@@ -78,6 +78,11 @@ class TranslatorData:
             either a merge or replace operation, this List will be populated with the elements
             that need to be removed.
 
+        values_to_remove (`List[Any]`): When processing YANG leaf-lists and performing
+            either a merge or replace operation, this List will be populated with the elements
+            that need to be removed.  The contents of the list are cooked values mapped from
+            types in yangson.instance.ObjectValue.
+
         extra (`Dict[str, Any]`): Arbitrary data that can be defined by the user when instantiating
             the root of the object. Useful to share arbitrary information throughout the entire
             lifecycle of the translator
@@ -144,7 +149,7 @@ class TranslatorData:
 
     def pre_process_leaf_list(self) -> None:
         """
-        This is called before processing a list.
+        This is called before processing a leaf-list.
         """
         pass
 
@@ -156,7 +161,7 @@ class TranslatorData:
 
     def post_process_leaf_list(self) -> None:
         """
-        This is called after processing a list.
+        This is called after processing a leaf-list.
         """
         pass
 
@@ -357,8 +362,19 @@ class Translator:
             candidate = self._get_inst_value(leaf_path)
         c(candidate)
 
-    def _process_leaf_list(self, leaf: schemanode.DataNode) -> None:
-        leaf_path = self._append_node_to_path(self.yy.path, leaf)
+    def _process_leaf_list(self, leaf_list: schemanode.DataNode) -> None:
+        """Process yangson.schemanode.LeafLiftNode data.
+
+        Process leaf-list nodes and populate self.yy.values_to_remove.
+
+        Args:
+            leaf_list: yangson.schemanode.LeafListNode
+
+        Returns:
+            None
+
+        """
+        leaf_path = self._append_node_to_path(self.yy.path, leaf_list)
         logger.debug("%s: is a leaf list", leaf_path)
         if not self._obj_forward_progress_leaf(leaf_path):
             logger.debug("%s: no need to progress", leaf_path)
@@ -377,7 +393,7 @@ class Translator:
         self._fill_to_remove_values(elements, running)
         self.yy.pre_process_leaf_list()
 
-        child_name = leaf.name.replace("-", "_")
+        child_name = leaf_list.name.replace("-", "_")
         c = getattr(self, f"{child_name}", None)
         if not c:
             logger.info("%s: (set) not implemented", leaf_path)
