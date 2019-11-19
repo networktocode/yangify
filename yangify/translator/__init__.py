@@ -404,7 +404,7 @@ class Translator:
             # this will have to be set to `leaf.default
             candidate = None
         else:
-            candidate = self._get_inst_value(leaf_path)
+            candidate = list(set(self._get_inst_value(leaf_path)) - set(running.value)) or None
         c(candidate)
         self.yy.post_process_leaf_list()
 
