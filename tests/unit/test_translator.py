@@ -168,6 +168,7 @@ class RootTestTranslatorPreProcessLeafList(translator.RootTranslator):
 
                         def post_process_leaf_list(self) -> None:
                             self.root_result["test"] = "test"
+                            assert self.result.get("members") is None
 
                     def description(self, value: Optional[bool]) -> None:
                         self.yy.result["description"] = value
