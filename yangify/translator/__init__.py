@@ -403,12 +403,14 @@ class Translator:
             # TODO: if we decide to have a "use defaults" parameters
             # this will have to be set to `leaf.default
             candidate = None
-        else:
+        elif not self.yy.replace:
             # only process child if there are elements to add
             elements = running.value if running else []
             candidate = [
                 i for i in self._get_inst_value(leaf_path) if i not in elements
             ] or []
+        else:
+            candidate = self._get_inst_value(leaf_path)
         c(candidate)
         self.yy.post_process_leaf_list()
 
