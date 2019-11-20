@@ -476,7 +476,7 @@ class Translator:
         self.yy.values_to_remove = []
         this = running.raw_value() if running else []
         other = candidate.raw_value() if candidate else []
-        self.yy.values_to_remove = list(set(this) - set(other))
+        self.yy.values_to_remove = [i for i in this if i not in other]
 
     def _extract_key(self, element: instance.ArrayEntry) -> str:
         return cast(str, element.value[element.schema_node.keys[0][0]])
