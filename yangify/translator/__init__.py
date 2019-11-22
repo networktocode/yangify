@@ -473,6 +473,20 @@ class Translator:
     def _fill_to_remove_values(
         self, candidate: Optional[instance.ObjectValue], running: instance.ObjectValue
     ) -> None:
+        """
+        This method returns the set difference of candidate - running.
+
+        The method uses a list comprehension in order to preserve the list order
+        as it is passed in from the caller.  The difference is set on the `values_to_remove`
+        class attribute.
+
+        Args:
+            candidate: list of values in the candidate leaf-list
+            running: list of values in the running leaf-list
+
+        Returns:
+            None
+        """
         self.yy.values_to_remove = []
         this = running.raw_value() if running else []
         other = candidate.raw_value() if candidate else []
