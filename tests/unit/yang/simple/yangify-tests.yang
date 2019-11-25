@@ -18,6 +18,9 @@ module yangify-tests {
                     leaf description {
                         type string;
                     }
+                    leaf-list members {
+                        type string;
+                    }
                 }
                 container state {
                     config false;

@@ -78,6 +78,11 @@ class TranslatorData:
             either a merge or replace operation, this List will be populated with the elements
             that need to be removed.
 
+        values_to_remove (`List[Any]`): When processing YANG leaf-lists and performing
+            either a merge or replace operation, this List will be populated with the elements
+            that need to be removed.  The contents of the list are cooked values mapped from
+            types in yangson.instance.ObjectValue.
+
         extra (`Dict[str, Any]`): Arbitrary data that can be defined by the user when instantiating
             the root of the object. Useful to share arbitrary information throughout the entire
             lifecycle of the translator
@@ -107,6 +112,7 @@ class TranslatorData:
         self.running = running
         self.replace = replace
         self.to_remove: List[instance.ArrayEntry] = []
+        self.values_to_remove: List[Any] = []
         self.extra = extra
 
     def init(self) -> None:
@@ -141,9 +147,21 @@ class TranslatorData:
         """
         pass
 
+    def pre_process_leaf_list(self) -> None:
+        """
+        This is called before processing a leaf-list.
+        """
+        pass
+
     def post_process_list(self) -> None:
         """
         This is called after processing a list.
+        """
+        pass
+
+    def post_process_leaf_list(self) -> None:
+        """
+        This is called after processing a leaf-list.
         """
         pass
 
@@ -344,6 +362,58 @@ class Translator:
             candidate = self._get_inst_value(leaf_path)
         c(candidate)
 
+    def _process_leaf_list(self, leaf_list: schemanode.DataNode) -> None:
+        """Process yangson.schemanode.LeafLiftNode data.
+
+        Process leaf-list nodes and populate self.yy.values_to_remove.
+
+        Args:
+            leaf_list: yangson.schemanode.LeafListNode
+
+        Returns:
+            None
+
+        """
+        leaf_path = self._append_node_to_path(self.yy.path, leaf_list)
+        logger.debug("%s: is a leaf list", leaf_path)
+        if not self._obj_forward_progress_leaf(leaf_path):
+            logger.debug("%s: no need to progress", leaf_path)
+            return
+        try:
+            elements = self.yy.candidate.goto(leaf_path)
+        except NonexistentInstance:
+            elements = None
+        if self.yy.running:
+            try:
+                running = self.yy.running.goto(leaf_path)
+            except NonexistentInstance:
+                running = []
+        else:
+            running = []
+        self._fill_to_remove_values(elements, running)
+        self.yy.pre_process_leaf_list()
+
+        child_name = leaf_list.name.replace("-", "_")
+        c = getattr(self, f"{child_name}", None)
+        if not c:
+            logger.info("%s: (set) not implemented", leaf_path)
+            return
+
+        if self._obj_remove_running(leaf_path):
+            # TODO: if we decide to have a "use defaults" parameters
+            # this will have to be set to `leaf.default
+            candidate = None
+        elif not self.yy.replace:
+            # only process child if there are elements to add
+            elements = running.value if running else []
+            candidate = [
+                i for i in self._get_inst_value(leaf_path) if i not in elements
+            ] or []
+        else:
+            candidate = self._get_inst_value(leaf_path)
+        c(candidate)
+        self.yy.post_process_leaf_list()
+
     def _process_container_node(self, node: schemanode.DataNode) -> None:
         node_path = self._append_node_to_path(self.yy.path, node)
         logger.debug("%s: is a container", node_path)
@@ -375,8 +445,10 @@ class Translator:
                     self._process_container_node(c)
             elif isinstance(child, (schemanode.ListNode,)):
                 self._process_container_node(child)
-            elif isinstance(child, (schemanode.LeafNode, schemanode.LeafListNode)):
+            elif isinstance(child, (schemanode.LeafNode)):
                 self._process_leaf(child)
+            elif isinstance(child, (schemanode.LeafListNode)):
+                self._process_leaf_list(child)
             else:
                 msg = f"{self.yy.path}: I don't know the type of this element"
                 logger.error(msg)
@@ -397,6 +469,28 @@ class Translator:
                         self.yy.to_remove.append(element)
                 else:
                     self.yy.to_remove.append(element)
+
+    def _fill_to_remove_values(
+        self, candidate: Optional[instance.ObjectValue], running: instance.ObjectValue
+    ) -> None:
+        """
+        This method returns the set difference of candidate - running.
+
+        The method uses a list comprehension in order to preserve the list order
+        as it is passed in from the caller.  The difference is set on the `values_to_remove`
+        class attribute.
+
+        Args:
+            candidate: list of values in the candidate leaf-list
+            running: list of values in the running leaf-list
+
+        Returns:
+            None
+        """
+        self.yy.values_to_remove = []
+        this = running.raw_value() if running else []
+        other = candidate.raw_value() if candidate else []
+        self.yy.values_to_remove = [i for i in this if i not in other]
 
     def _extract_key(self, element: instance.ArrayEntry) -> str:
         return cast(str, element.value[element.schema_node.keys[0][0]])
