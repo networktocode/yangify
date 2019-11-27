@@ -3,19 +3,16 @@ language: minimal
 dist: xenial
 script:
 - make tests
-before_install:
-  - pip install poetry
-install:
-  - poetry install -v
 before_deploy:
+- curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+- "mv $HOME/.poetry/bin/poetry /usr/bin/poetry"
 - poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
 - poetry build
 deploy:
   provider: script
   script: poetry publish
   on:
-    # tags: true
-    branch: travis
+    tags: true
 env:
   global:
   - secure: CEMUaMOU4PaYkIlO+mHkBL4z0SP8oT7DKhnG0BuXPPUKZzRGMXb1iHbRWH9fiYBFB/2lTEDJ9+qcvq5VVHkB452LrdHpISCgHHjKde/efGvXWDnCRUGubRNNijlkQdMQsmXmsM6I/n3yOEfehQo6L9fYWM4BGkn/41Mo2H9h4491ozgBD870FsA2QN6ac8VYo+z1sIgta/eq8WZUDZUnudTNqyqdGbgs4kYF/bxU10INDUpt8p/K5A/LrTNZrkWUsaUUSBETFvmU0EZ/b3GofK9HgwjWxtYMh0FZdJ62kO8cdm8I154BBKwEGCQKTcP7UJjJ/MVDaibK4tO+7g2e+SrSLAF9oE57xfd8vTss5NBjRYZID4lpuferQ0hyZ16IzNWlvZbIDRDQ3l1NF/C9wx45M9N6PgLhDGouHQptFdlCsyM7FuECnP8c8ayi1b08qDQ/1LDBuf4UHy9uPbMDRGPOJsnLtTUmajVkoazUVfG382HygVa/YlFzAx9xSnuobTe++RBmZEBAn7tRP255Vj2nD276I/ZadESUZz1E6LEzDAi25fRl8kJnDDcf2GBHf2wXfmYOoJrz/WgG7uOydHPOwgEP3S3Ox/1Ssfk9xEsMgxaRZHcJQmC6y2zLFdhMPbdoeZSyM+dX8WEiDBpWijVEgsrCI1nEnr9FJY4gpqs=
