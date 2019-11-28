@@ -96,6 +96,11 @@ docs:
 install:
 	/root/.poetry/bin/poetry install
 
+.PHONY: publish
+publish:
+	${DOCKER} \
+		poetry publish --build --username=$(PYPI_USER) --password="$(PYPI_PASSWORD)"
+
 .PHONY: _jupyter
 _jupyter:
 	/root/.poetry/bin/poetry install
