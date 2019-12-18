@@ -931,7 +931,7 @@ description = "Library for working with data modelled in YANG"
 name = "yangson"
 optional = false
 python-versions = "*"
-version = "1.3.47"
+version = "1.3.45"
 
 [package.dependencies]
 PyXB = "*"
@@ -953,7 +953,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "94e3eac726032e4ff928b889d3ad107830735f77e3f436f4834b2b34b549ed3d"
+content-hash = "750de6e8715066f0de6a1636b89657e7c10a4696fd0bfed4d215424ea7e1b6f8"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -1421,8 +1421,8 @@ xmltodict = [
     {file = "xmltodict-0.11.0.tar.gz", hash = "sha256:8f8d7d40aa28d83f4109a7e8aa86e67a4df202d9538be40c0cb1d70da527b0df"},
 ]
 yangson = [
-    {file = "yangson-1.3.47-py3-none-any.whl", hash = "sha256:92b9e94a776e0dbb2f4de73ceaa82ceae35ffb5e82a933056081f0ac9968d69c"},
-    {file = "yangson-1.3.47.tar.gz", hash = "sha256:46a0c99f4126e49945c4f72345a0405e58673830c2382ab368a8ddd0b93ba5fa"},
+    {file = "yangson-1.3.45-py3-none-any.whl", hash = "sha256:84c48709cd18e595d9eaa61fc3910b0d73b51f0724fc6dec9d57e7c6aff63a44"},
+    {file = "yangson-1.3.45.tar.gz", hash = "sha256:a4a879e1ac0e9871e29e17b123570018712a41d6aa6f560435cbbf6dc199f7bc"},
 ]
 zipp = [
     {file = "zipp-0.6.0-py2.py3-none-any.whl", hash = "sha256:f06903e9f1f43b12d371004b4ac7b06ab39a44adc747266928ae6debfa7b3335"},
