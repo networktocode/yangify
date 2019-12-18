@@ -125,7 +125,7 @@ Install `yangify` with `make install`:
 
 ```
 root@e726de8f2226:/yangify# make install
-/root/.poetry/bin/poetry install
+poetry install
 Skipping virtualenv creation, as specified in config file.
 Installing dependencies from lock file
 

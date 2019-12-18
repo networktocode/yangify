@@ -74,7 +74,7 @@ mypy:
 
 .PHONY: _nbval_docker
 _nbval_docker:
-	/root/.poetry/bin/poetry install
+	poetry install
 	pytest --nbval \
 		docs/tutorials
 
@@ -94,7 +94,7 @@ docs:
 
 .PHONY: install
 install:
-	/root/.poetry/bin/poetry install
+	poetry install
 
 .PHONY: publish
 publish:
@@ -103,7 +103,7 @@ publish:
 
 .PHONY: _jupyter
 _jupyter:
-	/root/.poetry/bin/poetry install
+	poetry install
 	jupyter notebook --allow-root --ip=0.0.0.0 --NotebookApp.token=''
 
 .PHONY: jupyter
@@ -113,7 +113,7 @@ jupyter:
 
 .PHONY: _jupyter_save
 _jupyter_save:
-	/root/.poetry/bin/poetry install
+	poetry install
 	jupyter nbconvert --to notebook --inplace --execute docs/tutorials/*.ipynb
 
 .PHONY: jupyter_save

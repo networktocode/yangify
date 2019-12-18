@@ -13,7 +13,7 @@ dataclasses = { version = "^0.6.0", python = "~3.6" }
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.0"
-black = { version = "19.3b0", allows-prereleases = true }
+black = { version = "19.3b0", allow-prereleases = true }
 pylama = "^7.6"
 flake8-import-order = "^0.18.0"
 mypy = "^0.701.0"
