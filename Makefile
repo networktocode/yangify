@@ -96,11 +96,6 @@ docs:
 install:
 	poetry install
 
-.PHONY: publish
-publish:
-	${DOCKER} \
-		poetry publish --build --username=$(PYPI_USER) --password="$(PYPI_PASSWORD)"
-
 .PHONY: _jupyter
 _jupyter:
 	poetry install
@@ -120,7 +115,6 @@ _jupyter_save:
 jupyter_save:
 	${DOCKER} \
 		make _jupyter_save
-
 
 .PHONY: dev_jupyter
 dev_jupyter:
