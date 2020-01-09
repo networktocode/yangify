@@ -3,10 +3,9 @@ dist: xenial
 script:
 - make tests
 before_deploy:
-- curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py
-  | python
-- "$HOME/.poetry/bin/poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD"
-- "$HOME/.poetry/bin/poetry build"
+- curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+- $HOME/.poetry/bin/poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
+- $HOME/.poetry/bin/poetry build
 deploy:
   provider: script
   script: poetry publish
