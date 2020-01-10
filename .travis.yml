@@ -1,11 +1,12 @@
-language: minimal
 dist: xenial
+services:
+- docker
 python: 3.6
 script:
-- make tests
 - pip install poetry
 - python -V
 - python3 -V
+- make tests
 before_deploy:
 - pip install poetry
 - python -V
