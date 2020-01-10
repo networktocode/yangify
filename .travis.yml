@@ -3,6 +3,9 @@ dist: xenial
 python: 3.6
 script:
 - make tests
+- pip install poetry
+- python -V
+- python3 -V
 before_deploy:
 - pip install poetry
 - python -V
