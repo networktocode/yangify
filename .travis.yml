@@ -1,13 +1,14 @@
 language: minimal
 dist: xenial
-python:
-  - 3.6
+python: 3.6
 script:
 - make tests
 before_deploy:
-- curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
-- $HOME/.poetry/bin/poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
-- $HOME/.poetry/bin/poetry build
+- pip install poetry
+- python -V
+- python3 -V
+- poetry config http-basic.pypi $PYPI_USER $PYPI_PASSWORD
+- poetry build
 deploy:
   provider: script
   script: poetry publish
