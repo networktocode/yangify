@@ -1,4 +1,4 @@
-dist: xenial
+language: python
 services:
 - docker
 python: 3.6
