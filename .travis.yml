@@ -1,5 +1,7 @@
 language: minimal
 dist: xenial
+python:
+  - 3.6
 script:
 - make tests
 before_deploy:
