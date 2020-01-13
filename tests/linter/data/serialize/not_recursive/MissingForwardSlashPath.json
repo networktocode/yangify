@@ -1,0 +1,17 @@
+{
+    "name": "conf",
+    "path": "openconfig-interfaces:interfaces/interface/conf",
+    "filepath": "/yangify/tests/linter/impl.py",
+    "lineno": 156,
+    "messages": [
+        {
+            "message": "Yangify.path should begin with forward slash",
+            "message_type": "E002"
+        }
+    ],
+    "children": {},
+    "type": "container",
+    "class_name": "MissingForwardSlashPath",
+    "implements": [],
+    "metadata": {}
+}

@@ -107,7 +107,7 @@ def get_test_cases(test: str) -> Dict[str, Any]:
 
 
 def get_root_objects(
-    platform: str
+    platform: str,
 ) -> Tuple[Type[parser.RootParser], Type[translator.RootTranslator]]:
     if platform == "ios":
         return IOSParser, IOSTranslator

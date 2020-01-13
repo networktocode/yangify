@@ -2,21 +2,21 @@
     "name": "RootP",
     "path": "/",
     "filepath": "/yangify/tests/linter/impl.py",
-    "lineno": 113,
+    "lineno": 111,
     "messages": [],
     "children": {
         "interfaces": {
             "name": "openconfig-interfaces:interfaces",
-            "path": "openconfig-interfaces:interfaces",
+            "path": "/openconfig-interfaces:interfaces",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 94,
+            "lineno": 92,
             "messages": [],
             "children": {
                 "interface": {
                     "name": "interface",
-                    "path": "openconfig-interfaces:interfaces/interface",
+                    "path": "/openconfig-interfaces:interfaces/interface",
                     "filepath": "/yangify/tests/linter/impl.py",
-                    "lineno": 83,
+                    "lineno": 81,
                     "messages": [
                         {
                             "message": "doesn't implement state",
@@ -89,16 +89,16 @@
         },
         "vlans": {
             "name": "openconfig-vlan:vlans",
-            "path": "openconfig-vlan:vlans",
+            "path": "/openconfig-vlan:vlans",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 106,
+            "lineno": 104,
             "messages": [],
             "children": {
                 "vlan": {
                     "name": "vlan",
-                    "path": "openconfig-vlan:vlans/vlan",
+                    "path": "/openconfig-vlan:vlans/vlan",
                     "filepath": "/yangify/tests/linter/impl.py",
-                    "lineno": 101,
+                    "lineno": 99,
                     "messages": [
                         {
                             "message": "doesn't implement vlan-id",

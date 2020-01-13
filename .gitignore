@@ -5,3 +5,4 @@ __pycache__
 _build
 .ipynb_checkpoints
 pip-wheel-metadata/
+.mypy_cache

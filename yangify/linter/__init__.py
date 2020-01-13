@@ -26,6 +26,7 @@ LintObjectType = Union[
 
 class MessageType:
     PATH_EMPTY = "E001"
+    PATH_MISSING_SLASH = "E002"
     SCHEMA_NOT_FOUND = "E101"
     SCHEMA_INVALID = "E102"
     CHILDREN_MISSING = "W001"
@@ -35,6 +36,7 @@ class MessageType:
     def help() -> Dict[str, Tuple[str, str]]:
         return {
             "E001": ("PATH_EMPTY", "path is empty"),
+            "E002": ("PATH_MISSING_SLASH", "path should begin with forward slash"),
             "E101": ("SCHEMA_NOT_FOUND", "schema path couldn't be found"),
             "E102": ("SCHEMA_INVALID", "schema path is invalid"),
             "W001": ("CHILDREN_MISSING ", "children is missing"),
@@ -271,6 +273,15 @@ class ContainerLinter:
                 Message("Yangify.path is not set or empty", MessageType.PATH_EMPTY)
             )
             return res
+        else:
+            if not path.startswith("/"):
+                res.messages.append(
+                    Message(
+                        "Yangify.path should begin with forward slash",
+                        MessageType.PATH_MISSING_SLASH,
+                    )
+                )
+                return res
 
         try:
             children, messages = ContainerLinter._process_children(
