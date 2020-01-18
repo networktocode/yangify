@@ -20,7 +20,7 @@
 /yangify/tests/linter/impl.py:81:W001:doesn't implement routed-vlan
 /yangify/tests/linter/impl.py:7:W001:doesn't implement mtu
 /yangify/tests/linter/impl.py:7:W101:extra doesn't correspond to a leaf or container
-/yangify/tests/linter/impl.py:156:E002:Yangify.path should begin with forward slash
+/yangify/tests/linter/impl.py:156:W002:Yangify.path should begin with forward slash
 /yangify/tests/linter/impl.py:81:W001:doesn't implement state
 /yangify/tests/linter/impl.py:81:W001:doesn't implement hold-time
 /yangify/tests/linter/impl.py:81:W001:doesn't implement subinterfaces

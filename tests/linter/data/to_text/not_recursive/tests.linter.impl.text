@@ -10,7 +10,7 @@
 /yangify/tests/linter/impl.py:7:W001:doesn't implement mtu
 /yangify/tests/linter/impl.py:7:W101:extra doesn't correspond to a leaf or container
 /yangify/tests/linter/impl.py:53:E101:Yangify.path couldn't be found in model: /openconfig-interfaces:interfaces/interface/conf
-/yangify/tests/linter/impl.py:156:E002:Yangify.path should begin with forward slash
+/yangify/tests/linter/impl.py:156:W002:Yangify.path should begin with forward slash
 /yangify/tests/linter/impl.py:67:E101:Yangify.path couldn't be found in model: /openconfig-vlan:switched-vlan
 /yangify/tests/linter/impl.py:99:W001:doesn't implement vlan-id
 /yangify/tests/linter/impl.py:99:W001:doesn't implement config

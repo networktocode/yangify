@@ -1,1 +1,1 @@
-/yangify/tests/linter/impl.py:156:E002:Yangify.path should begin with forward slash
+/yangify/tests/linter/impl.py:156:W002:Yangify.path should begin with forward slash

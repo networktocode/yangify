@@ -188,7 +188,7 @@
             "messages": [
                 {
                     "message": "Yangify.path should begin with forward slash",
-                    "message_type": "E002"
+                    "message_type": "W002"
                 }
             ],
             "children": {},

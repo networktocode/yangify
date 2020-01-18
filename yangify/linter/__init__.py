@@ -26,20 +26,20 @@ LintObjectType = Union[
 
 class MessageType:
     PATH_EMPTY = "E001"
-    PATH_MISSING_SLASH = "E002"
     SCHEMA_NOT_FOUND = "E101"
     SCHEMA_INVALID = "E102"
     CHILDREN_MISSING = "W001"
+    PATH_MISSING_SLASH = "W002"
     ATTRIBUTE_EXTRA = "W101"
 
     @staticmethod
     def help() -> Dict[str, Tuple[str, str]]:
         return {
             "E001": ("PATH_EMPTY", "path is empty"),
-            "E002": ("PATH_MISSING_SLASH", "path should begin with forward slash"),
             "E101": ("SCHEMA_NOT_FOUND", "schema path couldn't be found"),
             "E102": ("SCHEMA_INVALID", "schema path is invalid"),
             "W001": ("CHILDREN_MISSING ", "children is missing"),
+            "W002": ("PATH_MISSING_SLASH", "path should begin with forward slash"),
             "W101": ("ATTRIBUTE_EXTRA ", "class attribute doesn't belong to the model"),
         }
 
