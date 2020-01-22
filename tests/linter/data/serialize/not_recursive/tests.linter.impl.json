@@ -7,7 +7,7 @@
     "children": {
         "Ethernet": {
             "name": "openconfig-if-ethernet:ethernet",
-            "path": "openconfig-interfaces:interfaces/interface/openconfig-if-ethernet:ethernet",
+            "path": "/openconfig-interfaces:interfaces/interface/openconfig-if-ethernet:ethernet",
             "filepath": "/yangify/tests/linter/impl.py",
             "lineno": 74,
             "messages": [
@@ -30,9 +30,9 @@
         },
         "Interface": {
             "name": "interface",
-            "path": "openconfig-interfaces:interfaces/interface",
+            "path": "/openconfig-interfaces:interfaces/interface",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 83,
+            "lineno": 81,
             "messages": [
                 {
                     "message": "doesn't implement state",
@@ -88,12 +88,12 @@
         },
         "InterfaceConfigInvalidPath": {
             "name": "sdadasd",
-            "path": "sdadasd",
+            "path": "/sdadasd",
             "filepath": "/yangify/tests/linter/impl.py",
             "lineno": 60,
             "messages": [
                 {
-                    "message": "Yangify.path is invalid: sdadasd",
+                    "message": "Yangify.path is invalid: /sdadasd",
                     "message_type": "E102"
                 }
             ],
@@ -168,9 +168,9 @@
         },
         "Interfaces": {
             "name": "openconfig-interfaces:interfaces",
-            "path": "openconfig-interfaces:interfaces",
+            "path": "/openconfig-interfaces:interfaces",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 94,
+            "lineno": 92,
             "messages": [],
             "children": {},
             "type": "container",
@@ -180,18 +180,35 @@
             ],
             "metadata": {}
         },
+        "MissingForwardSlashPath": {
+            "name": "conf",
+            "path": "openconfig-interfaces:interfaces/interface/conf",
+            "filepath": "/yangify/tests/linter/impl.py",
+            "lineno": 156,
+            "messages": [
+                {
+                    "message": "Yangify.path should begin with forward slash",
+                    "message_type": "W002"
+                }
+            ],
+            "children": {},
+            "type": "container",
+            "class_name": "MissingForwardSlashPath",
+            "implements": [],
+            "metadata": {}
+        },
         "RootP": {
             "name": "RootP",
             "path": "/",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 113,
+            "lineno": 111,
             "messages": [],
             "children": {
                 "interfaces": {
                     "name": "openconfig-interfaces:interfaces",
-                    "path": "openconfig-interfaces:interfaces",
+                    "path": "/openconfig-interfaces:interfaces",
                     "filepath": "/yangify/tests/linter/impl.py",
-                    "lineno": 94,
+                    "lineno": 92,
                     "messages": [],
                     "children": {},
                     "type": "container",
@@ -203,9 +220,9 @@
                 },
                 "vlans": {
                     "name": "openconfig-vlan:vlans",
-                    "path": "openconfig-vlan:vlans",
+                    "path": "/openconfig-vlan:vlans",
                     "filepath": "/yangify/tests/linter/impl.py",
-                    "lineno": 106,
+                    "lineno": 104,
                     "messages": [],
                     "children": {},
                     "type": "container",
@@ -222,14 +239,14 @@
             "name": "RootT",
             "path": "/",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 118,
+            "lineno": 116,
             "messages": [],
             "children": {
                 "interfaces": {
                     "name": "openconfig-interfaces:interfaces",
-                    "path": "openconfig-interfaces:interfaces",
+                    "path": "/openconfig-interfaces:interfaces",
                     "filepath": "/yangify/tests/linter/impl.py",
-                    "lineno": 119,
+                    "lineno": 117,
                     "messages": [],
                     "children": {},
                     "type": "container",
@@ -241,9 +258,9 @@
                 },
                 "vlans": {
                     "name": "openconfig-vlan:vlans",
-                    "path": "openconfig-vlan:vlans",
+                    "path": "/openconfig-vlan:vlans",
                     "filepath": "/yangify/tests/linter/impl.py",
-                    "lineno": 149,
+                    "lineno": 147,
                     "messages": [],
                     "children": {},
                     "type": "container",
@@ -258,12 +275,12 @@
         },
         "SwitchedVlan": {
             "name": "openconfig-vlan:switched-vlan",
-            "path": "openconfig-vlan:switched-vlan",
+            "path": "/openconfig-vlan:switched-vlan",
             "filepath": "/yangify/tests/linter/impl.py",
             "lineno": 67,
             "messages": [
                 {
-                    "message": "Yangify.path couldn't be found in model: openconfig-vlan:switched-vlan",
+                    "message": "Yangify.path couldn't be found in model: /openconfig-vlan:switched-vlan",
                     "message_type": "E101"
                 }
             ],
@@ -275,9 +292,9 @@
         },
         "Vlan": {
             "name": "vlan",
-            "path": "openconfig-vlan:vlans/vlan",
+            "path": "/openconfig-vlan:vlans/vlan",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 101,
+            "lineno": 99,
             "messages": [
                 {
                     "message": "doesn't implement vlan-id",
@@ -304,9 +321,9 @@
         },
         "Vlans": {
             "name": "openconfig-vlan:vlans",
-            "path": "openconfig-vlan:vlans",
+            "path": "/openconfig-vlan:vlans",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 106,
+            "lineno": 104,
             "messages": [],
             "children": {},
             "type": "container",

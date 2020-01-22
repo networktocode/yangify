@@ -1,11 +1,11 @@
-/yangify/tests/linter/impl.py:83:W001:doesn't implement state
-/yangify/tests/linter/impl.py:83:W001:doesn't implement hold-time
-/yangify/tests/linter/impl.py:83:W001:doesn't implement subinterfaces
-/yangify/tests/linter/impl.py:83:W001:doesn't implement aggregation
-/yangify/tests/linter/impl.py:83:W001:doesn't implement routed-vlan
+/yangify/tests/linter/impl.py:81:W001:doesn't implement state
+/yangify/tests/linter/impl.py:81:W001:doesn't implement hold-time
+/yangify/tests/linter/impl.py:81:W001:doesn't implement subinterfaces
+/yangify/tests/linter/impl.py:81:W001:doesn't implement aggregation
+/yangify/tests/linter/impl.py:81:W001:doesn't implement routed-vlan
 /yangify/tests/linter/impl.py:7:W001:doesn't implement mtu
 /yangify/tests/linter/impl.py:7:W101:extra doesn't correspond to a leaf or container
-/yangify/tests/linter/impl.py:101:W001:doesn't implement vlan-id
-/yangify/tests/linter/impl.py:101:W001:doesn't implement config
-/yangify/tests/linter/impl.py:101:W001:doesn't implement state
-/yangify/tests/linter/impl.py:101:W001:doesn't implement members
+/yangify/tests/linter/impl.py:99:W001:doesn't implement vlan-id
+/yangify/tests/linter/impl.py:99:W001:doesn't implement config
+/yangify/tests/linter/impl.py:99:W001:doesn't implement state
+/yangify/tests/linter/impl.py:99:W001:doesn't implement members

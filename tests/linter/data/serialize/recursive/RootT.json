@@ -2,21 +2,21 @@
     "name": "RootT",
     "path": "/",
     "filepath": "/yangify/tests/linter/impl.py",
-    "lineno": 118,
+    "lineno": 116,
     "messages": [],
     "children": {
         "interfaces": {
             "name": "openconfig-interfaces:interfaces",
-            "path": "openconfig-interfaces:interfaces",
+            "path": "/openconfig-interfaces:interfaces",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 119,
+            "lineno": 117,
             "messages": [],
             "children": {
                 "interface": {
                     "name": "interface",
-                    "path": "openconfig-interfaces:interfaces/interface",
+                    "path": "/openconfig-interfaces:interfaces/interface",
                     "filepath": "/yangify/tests/linter/impl.py",
-                    "lineno": 123,
+                    "lineno": 121,
                     "messages": [
                         {
                             "message": "doesn't implement state",
@@ -38,9 +38,9 @@
                     "children": {
                         "config": {
                             "name": "config",
-                            "path": "openconfig-interfaces:interfaces/interface/config",
+                            "path": "/openconfig-interfaces:interfaces/interface/config",
                             "filepath": "/yangify/tests/linter/impl.py",
-                            "lineno": 127,
+                            "lineno": 125,
                             "messages": [
                                 {
                                     "message": "doesn't implement mtu",
@@ -63,12 +63,12 @@
                         },
                         "aggregation": {
                             "name": "aggregation",
-                            "path": "openconfig-interfaces:interfaces/interface/aggregation",
+                            "path": "/openconfig-interfaces:interfaces/interface/aggregation",
                             "filepath": "/yangify/tests/linter/impl.py",
-                            "lineno": 140,
+                            "lineno": 138,
                             "messages": [
                                 {
-                                    "message": "Yangify.path couldn't be found in model: openconfig-interfaces:interfaces/interface/aggregation",
+                                    "message": "Yangify.path couldn't be found in model: /openconfig-interfaces:interfaces/interface/aggregation",
                                     "message_type": "E101"
                                 }
                             ],
@@ -98,16 +98,16 @@
         },
         "vlans": {
             "name": "openconfig-vlan:vlans",
-            "path": "openconfig-vlan:vlans",
+            "path": "/openconfig-vlan:vlans",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 149,
+            "lineno": 147,
             "messages": [],
             "children": {
                 "vlan": {
                     "name": "vlan",
-                    "path": "openconfig-vlan:vlans/vlan",
+                    "path": "/openconfig-vlan:vlans/vlan",
                     "filepath": "/yangify/tests/linter/impl.py",
-                    "lineno": 153,
+                    "lineno": 151,
                     "messages": [
                         {
                             "message": "doesn't implement vlan-id",

@@ -59,30 +59,28 @@ class InterfaceConfigWrongPath(Parser):
 
 class InterfaceConfigInvalidPath(Parser):
     class Yangify(ParserData):
-        path = "sdadasd"
+        path = "/sdadasd"
 
     pass
 
 
 class SwitchedVlan(Parser):
     class Yangify(ParserData):
-        path = "openconfig-vlan:switched-vlan"
+        path = "/openconfig-vlan:switched-vlan"
 
     pass
 
 
 class Ethernet(Parser):
     class Yangify(ParserData):
-        path = (
-            "openconfig-interfaces:interfaces/interface/openconfig-if-ethernet:ethernet"
-        )
+        path = "/openconfig-interfaces:interfaces/interface/openconfig-if-ethernet:ethernet"
 
     switched_vlan = SwitchedVlan
 
 
 class Interface(Parser):
     class Yangify(ParserData):
-        path = "openconfig-interfaces:interfaces/interface"
+        path = "/openconfig-interfaces:interfaces/interface"
 
     config = InterfaceConfigWarnings
     ethernet = Ethernet
@@ -93,19 +91,19 @@ class Interface(Parser):
 
 class Interfaces(Parser):
     class Yangify(ParserData):
-        path = "openconfig-interfaces:interfaces"
+        path = "/openconfig-interfaces:interfaces"
 
     interface = Interface
 
 
 class Vlan(Parser):
     class Yangify(ParserData):
-        path = "openconfig-vlan:vlans/vlan"
+        path = "/openconfig-vlan:vlans/vlan"
 
 
 class Vlans(Parser):
     class Yangify(ParserData):
-        path = "openconfig-vlan:vlans"
+        path = "/openconfig-vlan:vlans"
 
     vlan = Vlan
 
@@ -118,15 +116,15 @@ class RootP(RootParser):
 class RootT(RootTranslator):
     class interfaces(Translator):
         class Yangify(ParserData):
-            path = "openconfig-interfaces:interfaces"
+            path = "/openconfig-interfaces:interfaces"
 
         class interface(Translator):
             class Yangify(ParserData):
-                path = "openconfig-interfaces:interfaces/interface"
+                path = "/openconfig-interfaces:interfaces/interface"
 
             class config(Translator):
                 class Yangify(ParserData):
-                    path = "openconfig-interfaces:interfaces/interface/config"
+                    path = "/openconfig-interfaces:interfaces/interface/config"
 
                 def description(self, *args: Any, **kwargs: Any) -> None:
                     return None
@@ -139,7 +137,7 @@ class RootT(RootTranslator):
 
             class aggregation(Translator):
                 class Yangify(ParserData):
-                    path = "openconfig-interfaces:interfaces/interface/aggregation"
+                    path = "/openconfig-interfaces:interfaces/interface/aggregation"
 
                 pass
 
@@ -148,8 +146,15 @@ class RootT(RootTranslator):
 
     class vlans(Translator):
         class Yangify(ParserData):
-            path = "openconfig-vlan:vlans"
+            path = "/openconfig-vlan:vlans"
 
         class vlan(Translator):
             class Yangify(ParserData):
-                path = "openconfig-vlan:vlans/vlan"
+                path = "/openconfig-vlan:vlans/vlan"
+
+
+class MissingForwardSlashPath(Parser):
+    class Yangify(ParserData):
+        path = "openconfig-interfaces:interfaces/interface/conf"
+
+    pass

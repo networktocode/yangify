@@ -25,6 +25,7 @@ def get_test_cases() -> Dict[str, Any]:
         impl.InterfaceConfigWrongPath,
         impl.InterfaceConfigInvalidPath,
         impl.Interfaces,
+        impl.MissingForwardSlashPath,
         impl.RootP,
         impl.RootT,
         impl,

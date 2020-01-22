@@ -1,53 +1,54 @@
 /yangify/tests/linter/impl.py:74:W001:doesn't implement config
 /yangify/tests/linter/impl.py:74:W001:doesn't implement state
-/yangify/tests/linter/impl.py:67:E101:Yangify.path couldn't be found in model: openconfig-vlan:switched-vlan
-/yangify/tests/linter/impl.py:83:W001:doesn't implement state
-/yangify/tests/linter/impl.py:83:W001:doesn't implement hold-time
-/yangify/tests/linter/impl.py:83:W001:doesn't implement subinterfaces
-/yangify/tests/linter/impl.py:83:W001:doesn't implement aggregation
-/yangify/tests/linter/impl.py:83:W001:doesn't implement routed-vlan
+/yangify/tests/linter/impl.py:67:E101:Yangify.path couldn't be found in model: /openconfig-vlan:switched-vlan
+/yangify/tests/linter/impl.py:81:W001:doesn't implement state
+/yangify/tests/linter/impl.py:81:W001:doesn't implement hold-time
+/yangify/tests/linter/impl.py:81:W001:doesn't implement subinterfaces
+/yangify/tests/linter/impl.py:81:W001:doesn't implement aggregation
+/yangify/tests/linter/impl.py:81:W001:doesn't implement routed-vlan
 /yangify/tests/linter/impl.py:7:W001:doesn't implement mtu
 /yangify/tests/linter/impl.py:7:W101:extra doesn't correspond to a leaf or container
-/yangify/tests/linter/impl.py:60:E102:Yangify.path is invalid: sdadasd
+/yangify/tests/linter/impl.py:60:E102:Yangify.path is invalid: /sdadasd
 /yangify/tests/linter/impl.py:49:E001:Yangify.path is not set or empty
 /yangify/tests/linter/impl.py:7:W001:doesn't implement mtu
 /yangify/tests/linter/impl.py:7:W101:extra doesn't correspond to a leaf or container
 /yangify/tests/linter/impl.py:53:E101:Yangify.path couldn't be found in model: /openconfig-interfaces:interfaces/interface/conf
-/yangify/tests/linter/impl.py:83:W001:doesn't implement state
-/yangify/tests/linter/impl.py:83:W001:doesn't implement hold-time
-/yangify/tests/linter/impl.py:83:W001:doesn't implement subinterfaces
-/yangify/tests/linter/impl.py:83:W001:doesn't implement aggregation
-/yangify/tests/linter/impl.py:83:W001:doesn't implement routed-vlan
+/yangify/tests/linter/impl.py:81:W001:doesn't implement state
+/yangify/tests/linter/impl.py:81:W001:doesn't implement hold-time
+/yangify/tests/linter/impl.py:81:W001:doesn't implement subinterfaces
+/yangify/tests/linter/impl.py:81:W001:doesn't implement aggregation
+/yangify/tests/linter/impl.py:81:W001:doesn't implement routed-vlan
 /yangify/tests/linter/impl.py:7:W001:doesn't implement mtu
 /yangify/tests/linter/impl.py:7:W101:extra doesn't correspond to a leaf or container
-/yangify/tests/linter/impl.py:83:W001:doesn't implement state
-/yangify/tests/linter/impl.py:83:W001:doesn't implement hold-time
-/yangify/tests/linter/impl.py:83:W001:doesn't implement subinterfaces
-/yangify/tests/linter/impl.py:83:W001:doesn't implement aggregation
-/yangify/tests/linter/impl.py:83:W001:doesn't implement routed-vlan
+/yangify/tests/linter/impl.py:156:W002:Yangify.path should begin with forward slash
+/yangify/tests/linter/impl.py:81:W001:doesn't implement state
+/yangify/tests/linter/impl.py:81:W001:doesn't implement hold-time
+/yangify/tests/linter/impl.py:81:W001:doesn't implement subinterfaces
+/yangify/tests/linter/impl.py:81:W001:doesn't implement aggregation
+/yangify/tests/linter/impl.py:81:W001:doesn't implement routed-vlan
 /yangify/tests/linter/impl.py:7:W001:doesn't implement mtu
 /yangify/tests/linter/impl.py:7:W101:extra doesn't correspond to a leaf or container
-/yangify/tests/linter/impl.py:101:W001:doesn't implement vlan-id
-/yangify/tests/linter/impl.py:101:W001:doesn't implement config
-/yangify/tests/linter/impl.py:101:W001:doesn't implement state
-/yangify/tests/linter/impl.py:101:W001:doesn't implement members
-/yangify/tests/linter/impl.py:123:W001:doesn't implement state
-/yangify/tests/linter/impl.py:123:W001:doesn't implement hold-time
-/yangify/tests/linter/impl.py:123:W001:doesn't implement subinterfaces
-/yangify/tests/linter/impl.py:123:W001:doesn't implement routed-vlan
-/yangify/tests/linter/impl.py:127:W001:doesn't implement mtu
-/yangify/tests/linter/impl.py:127:W001:doesn't implement enabled
-/yangify/tests/linter/impl.py:140:E101:Yangify.path couldn't be found in model: openconfig-interfaces:interfaces/interface/aggregation
-/yangify/tests/linter/impl.py:153:W001:doesn't implement vlan-id
-/yangify/tests/linter/impl.py:153:W001:doesn't implement config
-/yangify/tests/linter/impl.py:153:W001:doesn't implement state
-/yangify/tests/linter/impl.py:153:W001:doesn't implement members
-/yangify/tests/linter/impl.py:67:E101:Yangify.path couldn't be found in model: openconfig-vlan:switched-vlan
-/yangify/tests/linter/impl.py:101:W001:doesn't implement vlan-id
-/yangify/tests/linter/impl.py:101:W001:doesn't implement config
-/yangify/tests/linter/impl.py:101:W001:doesn't implement state
-/yangify/tests/linter/impl.py:101:W001:doesn't implement members
-/yangify/tests/linter/impl.py:101:W001:doesn't implement vlan-id
-/yangify/tests/linter/impl.py:101:W001:doesn't implement config
-/yangify/tests/linter/impl.py:101:W001:doesn't implement state
-/yangify/tests/linter/impl.py:101:W001:doesn't implement members
+/yangify/tests/linter/impl.py:99:W001:doesn't implement vlan-id
+/yangify/tests/linter/impl.py:99:W001:doesn't implement config
+/yangify/tests/linter/impl.py:99:W001:doesn't implement state
+/yangify/tests/linter/impl.py:99:W001:doesn't implement members
+/yangify/tests/linter/impl.py:121:W001:doesn't implement state
+/yangify/tests/linter/impl.py:121:W001:doesn't implement hold-time
+/yangify/tests/linter/impl.py:121:W001:doesn't implement subinterfaces
+/yangify/tests/linter/impl.py:121:W001:doesn't implement routed-vlan
+/yangify/tests/linter/impl.py:125:W001:doesn't implement mtu
+/yangify/tests/linter/impl.py:125:W001:doesn't implement enabled
+/yangify/tests/linter/impl.py:138:E101:Yangify.path couldn't be found in model: /openconfig-interfaces:interfaces/interface/aggregation
+/yangify/tests/linter/impl.py:151:W001:doesn't implement vlan-id
+/yangify/tests/linter/impl.py:151:W001:doesn't implement config
+/yangify/tests/linter/impl.py:151:W001:doesn't implement state
+/yangify/tests/linter/impl.py:151:W001:doesn't implement members
+/yangify/tests/linter/impl.py:67:E101:Yangify.path couldn't be found in model: /openconfig-vlan:switched-vlan
+/yangify/tests/linter/impl.py:99:W001:doesn't implement vlan-id
+/yangify/tests/linter/impl.py:99:W001:doesn't implement config
+/yangify/tests/linter/impl.py:99:W001:doesn't implement state
+/yangify/tests/linter/impl.py:99:W001:doesn't implement members
+/yangify/tests/linter/impl.py:99:W001:doesn't implement vlan-id
+/yangify/tests/linter/impl.py:99:W001:doesn't implement config
+/yangify/tests/linter/impl.py:99:W001:doesn't implement state
+/yangify/tests/linter/impl.py:99:W001:doesn't implement members

@@ -29,6 +29,7 @@ class MessageType:
     SCHEMA_NOT_FOUND = "E101"
     SCHEMA_INVALID = "E102"
     CHILDREN_MISSING = "W001"
+    PATH_MISSING_SLASH = "W002"
     ATTRIBUTE_EXTRA = "W101"
 
     @staticmethod
@@ -38,6 +39,7 @@ class MessageType:
             "E101": ("SCHEMA_NOT_FOUND", "schema path couldn't be found"),
             "E102": ("SCHEMA_INVALID", "schema path is invalid"),
             "W001": ("CHILDREN_MISSING ", "children is missing"),
+            "W002": ("PATH_MISSING_SLASH", "path should begin with forward slash"),
             "W101": ("ATTRIBUTE_EXTRA ", "class attribute doesn't belong to the model"),
         }
 
@@ -271,6 +273,15 @@ class ContainerLinter:
                 Message("Yangify.path is not set or empty", MessageType.PATH_EMPTY)
             )
             return res
+        else:
+            if not path.startswith("/"):
+                res.messages.append(
+                    Message(
+                        "Yangify.path should begin with forward slash",
+                        MessageType.PATH_MISSING_SLASH,
+                    )
+                )
+                return res
 
         try:
             children, messages = ContainerLinter._process_children(

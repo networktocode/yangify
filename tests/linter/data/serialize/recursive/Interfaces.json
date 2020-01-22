@@ -1,15 +1,15 @@
 {
     "name": "openconfig-interfaces:interfaces",
-    "path": "openconfig-interfaces:interfaces",
+    "path": "/openconfig-interfaces:interfaces",
     "filepath": "/yangify/tests/linter/impl.py",
-    "lineno": 94,
+    "lineno": 92,
     "messages": [],
     "children": {
         "interface": {
             "name": "interface",
-            "path": "openconfig-interfaces:interfaces/interface",
+            "path": "/openconfig-interfaces:interfaces/interface",
             "filepath": "/yangify/tests/linter/impl.py",
-            "lineno": 83,
+            "lineno": 81,
             "messages": [
                 {
                     "message": "doesn't implement state",
