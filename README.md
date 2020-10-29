@@ -46,7 +46,7 @@ Build the containers needed.
 
 
 ```
-$ make build_test_containers 
+$ make build_test_containers
 ```
 
 **Step 4**
@@ -60,14 +60,14 @@ make dev_jupyter
 
 **Step 5**
 
-Lanunch a browser and navigate to the following URL:
+Launch a browser and navigate to the following URL:
 
 ```
 http://127.0.0.1:8888
 ```
 
 
-You will find all of the notebooks in `docs/tutorials` and also `docs/tutorials/parsing-quickstart`.  
+You will find all of the notebooks in `docs/tutorials` and also `docs/tutorials/parsing-quickstart`.
 
 These same notebooks can be viewed without being interactive in the Read the Docs.
 
@@ -75,7 +75,7 @@ These same notebooks can be viewed without being interactive in the Read the Doc
 
 ### Go Right into a Working Yangify Dev Environment
 
-> Note: this dev environment is built for parsing.  
+> Note: this dev environment is built for parsing.
 
 **Step 1**
 
@@ -103,7 +103,7 @@ Build the containers needed.
 
 
 ```
-$ make build_test_containers 
+$ make build_test_containers
 ```
 
 
@@ -144,7 +144,7 @@ Navigate into the `parsing-quickstart` directory (inside the container):
 
 ```
 root@e726de8f2226:/yangify# cd docs/tutorials/parsing-quickstart/
-root@e726de8f2226:/yangify/docs/tutorials/parsing-quickstart# 
+root@e726de8f2226:/yangify/docs/tutorials/parsing-quickstart#
 ```
 
 **Step 7**
@@ -184,8 +184,5 @@ root@e726de8f2226:/yangify/docs/tutorials/parsing-quickstart# python dev-yangify
         ]
     }
 }
-root@e726de8f2226:/yangify/docs/tutorials/parsing-quickstart# 
+root@e726de8f2226:/yangify/docs/tutorials/parsing-quickstart#
 ```
-
-
-
