@@ -4,7 +4,7 @@ FROM python:${PYTHON}-stretch
 
 RUN apt-get update && apt-get install -y pandoc
 
-RUN pip install poetry==1.0.0 && poetry config virtualenvs.create false && pip install -U "pip<19"
+RUN pip install poetry==1.0.0 && poetry config virtualenvs.create false && pip install -U pip
 
 ADD poetry.lock /tmp
 ADD pyproject.toml /tmp
